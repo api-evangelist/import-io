@@ -1,0 +1,334 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0",
+        "title": "import.io",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsschedule.import.io\/"
+    ],
+    "paths": {
+        "\/extractor\/{extractorId}\/csv\/latest": {
+            "get": {
+                "summary": "Get Extractor Extractorid Csv Latest",
+                "description": "Get the latest crawl run results as a csv.",
+                "operationId": "GetExtractorExtractorCsvLatest",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    }
+                ]
+            }
+        },
+        "\/extractor\/{extractorId}\/json\/latest": {
+            "get": {
+                "summary": "Get Extractor Extractorid Json Latest",
+                "description": "Get the latest crawl run results as json.",
+                "operationId": "GetExtractorExtractorJsonLatest",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    }
+                ]
+            }
+        },
+        "\/extractor\/{extractorId}": {
+            "get": {
+                "summary": "Get Extractor Extractorid",
+                "description": "Query by extractor endpoint, adhoc runs only..",
+                "operationId": "GetExtractorExtractor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "url"
+                    }
+                ]
+            }
+        },
+        "\/extractor\/{extractorId}\/runs": {
+            "get": {
+                "summary": "Get Extractor Extractorid Runs",
+                "description": "Get a feed of the runs performed on an extractor.",
+                "operationId": "GetExtractorExtractorRuns",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    }
+                ]
+            }
+        },
+        "\/extractor\/{extractorId}\/cancel": {
+            "post": {
+                "summary": "Post Extractor Extractorid Cancel",
+                "description": "Cancel an existing crawl..",
+                "operationId": "PostExtractorExtractorCancel",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    }
+                ]
+            }
+        },
+        "\/extractor\/{extractorId}\/start": {
+            "post": {
+                "summary": "Post Extractor Extractorid Start",
+                "description": "Launch a crawl from an extractor that a user owns..",
+                "operationId": "PostExtractorExtractorStart",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    },
+                    {
+                        "name": "loginSessionId",
+                        "in": "query",
+                        "description": "The loginSessionId required for authenticated extractors. Only required when running authenticated extractors."
+                    }
+                ]
+            }
+        },
+        "\/extractor": {
+            "get": {
+                "summary": "Get Extractor",
+                "description": "Get the list of schedules for all your extractors.",
+                "operationId": "GetExtractor",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Extractor",
+                "description": "Schedule and extractor to run at a specific time.",
+                "operationId": "PostExtractor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Schedule Request Body",
+                        "in": "body",
+                        "description": "Request body with the schema defined on the left. Interval is a cron string."
+                    }
+                ]
+            }
+        },
+        "\/extractor\/{extractorId}\/": {
+            "delete": {
+                "summary": "Delete Extractor Extractorid",
+                "description": "Delete an existing schedule.",
+                "operationId": "DeleteExtractorExtractor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "Get Extractor Extractorid",
+                "description": "Get the schedule of a particular extractor.",
+                "operationId": "GetExtractorExtractor",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "extractorId",
+                        "in": "path",
+                        "description": "the id of the extractor to start get the latest crawl run data"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "APIError": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CrawlRun": {
+                "type": "object",
+                "properties": {
+                    "extractorId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "failedUrlCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "guid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rowCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "runtimeConfigId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startedAt": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "stoppedAt": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "successUrlCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalUrlCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "urlListId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ObjectStoreSearchResult": {
+                "type": "object",
+                "properties": {
+                    "hits": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timed_out": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "took": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "QueryResponse": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "exceptionType": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "extractorData": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "pageData": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "runtimeConfigId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sequenceNumber": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Schedule": {
+                "type": "object",
+                "properties": {
+                    "extractorId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "interval": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "intervalData": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "nextRunAt": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ownerId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTimestamp": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScheduleRequest": {
+                "type": "object",
+                "properties": {
+                    "extractorId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "interval": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTimestamp": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
