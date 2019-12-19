@@ -1,0 +1,329 @@
+{
+    "id": "fc6525e392709a75d309286906023cef",
+    "name": "import.io",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "bfc7adc65cf4f02a9d72f97778773fb0",
+            "name": "Get Extractor Extractorid Csv Latest",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/csv\/latest",
+            "description": "Get the latest crawl run results as a csv.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "f953de82d35d87694ee90cd9aab0d78a",
+            "name": "Get Extractor Extractorid Json Latest",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/json\/latest",
+            "description": "Get the latest crawl run results as json.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "0b5fa75324c51fba00d970f7e44c0fe4",
+            "name": "Get Extractor Extractorid",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}",
+            "description": "Query by extractor endpoint, adhoc runs only..",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "url",
+                    "description": "url",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "ab18f2fd70dc68ebdbdcf18c4e9df548",
+            "name": "Get Extractor Extractorid Runs",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/runs",
+            "description": "Get a feed of the runs performed on an extractor.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "856668e545c4a931645821e5f044daa3",
+            "name": "Post Extractor Extractorid Cancel",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/cancel",
+            "description": "Cancel an existing crawl..",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "b61520e97009bd3c510d9cf1143dd4bc",
+            "name": "Post Extractor Extractorid Start",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/start",
+            "description": "Launch a crawl from an extractor that a user owns..",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "loginSessionId",
+                    "description": "The loginSessionId required for authenticated extractors. Only required when running authenticated extractors.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "d282f4de1718269bb4a1784d4ca0193c",
+            "name": "Get Extractor",
+            "url": "httpsschedule.import.io\/\/extractor",
+            "description": "Get the list of schedules for all your extractors.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "d71e1adf50906f8f570e5bf28078a25f",
+            "name": "Post Extractor",
+            "url": "httpsschedule.import.io\/\/extractor",
+            "description": "Schedule and extractor to run at a specific time.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Schedule Request Body",
+                    "description": "Request body with the schema defined on the left. Interval is a cron string.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "262cbbb6887ef863f7cffe561d3b8566",
+            "name": "Delete Extractor Extractorid",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/",
+            "description": "Delete an existing schedule.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        },
+        {
+            "id": "957f066a5f76997ea3dcc4ef00008f84",
+            "name": "Get Extractor Extractorid",
+            "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/",
+            "description": "Get the schedule of a particular extractor.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "extractorId",
+                    "description": "the id of the extractor to start get the latest crawl run data",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "fc6525e392709a75d309286906023cef",
+            "rawModeData": ""
+        }
+    ]
+}
