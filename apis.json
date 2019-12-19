@@ -1,0 +1,154 @@
+{
+    "name": "Import.io",
+    "description": "Home Page - Import.io - Web Scraping, Data Extraction and Web Harvesting",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1728-import-io.jpg",
+    "tags": [
+        "api provider",
+        "api service provider",
+        "api united kingdom",
+        "have api",
+        "have swagger",
+        "relative data",
+        "scraping",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/import-io\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "import.io",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1728-import-io.jpg",
+            "humanURL": "http:\/\/import.io",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/import-io-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/import-io.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.import.io\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/importio"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/importio"
+        },
+        {
+            "type": "Email",
+            "url": "legal@import.io"
+        },
+        {
+            "type": "Email",
+            "url": "support@import.io"
+        },
+        {
+            "type": "Email",
+            "url": "copyright@import.io"
+        },
+        {
+            "type": "Email",
+            "url": "hello@import.io"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/import-io"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-10-00-54.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-33-44.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-33-58.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-34-04.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-09-33-42.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-09-33-50.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-09-34-04.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-09-34-11.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-34-58.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-35-04.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-35-42.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-35-48.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-35-55.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-04-01-36-01.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-03-16-28-15.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1728-2019-09-03-16-28-22.json"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.import.io\/standard-plans\/"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/importio"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.import.io\/"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/import.io"
+        }
+    ]
+}
