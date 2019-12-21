@@ -1,5 +1,5 @@
 {
-    "id": "fc6525e392709a75d309286906023cef",
+    "id": "c09893f6ad1c121f36f2f46fd931f835",
     "name": "import.io",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "bfc7adc65cf4f02a9d72f97778773fb0",
+            "id": "7e99787436439363c6a4370d2d304995",
             "name": "Get Extractor Extractorid Csv Latest",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/csv\/latest",
             "description": "Get the latest crawl run results as a csv.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "f953de82d35d87694ee90cd9aab0d78a",
+            "id": "4e1a65d3eb8dfaa7fee1dca640aecec0",
             "name": "Get Extractor Extractorid Json Latest",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/json\/latest",
             "description": "Get the latest crawl run results as json.",
@@ -68,11 +68,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "0b5fa75324c51fba00d970f7e44c0fe4",
+            "id": "35a6fd515ce35d8fc04785b2984b08b3",
             "name": "Get Extractor Extractorid",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}",
             "description": "Query by extractor endpoint, adhoc runs only..",
@@ -106,11 +106,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "ab18f2fd70dc68ebdbdcf18c4e9df548",
+            "id": "0b3862202409ed4e842ae991c481358a",
             "name": "Get Extractor Extractorid Runs",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/runs",
             "description": "Get a feed of the runs performed on an extractor.",
@@ -137,11 +137,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "856668e545c4a931645821e5f044daa3",
+            "id": "78f80374c0b81ed1d06f145c1142df52",
             "name": "Post Extractor Extractorid Cancel",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/cancel",
             "description": "Cancel an existing crawl..",
@@ -168,11 +168,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "b61520e97009bd3c510d9cf1143dd4bc",
+            "id": "85a0a7c0d786dd278dbbe19dda6bb258",
             "name": "Post Extractor Extractorid Start",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/start",
             "description": "Launch a crawl from an extractor that a user owns..",
@@ -206,11 +206,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "d282f4de1718269bb4a1784d4ca0193c",
+            "id": "87fc73db94f14cd2be9adbe68c17a2bb",
             "name": "Get Extractor",
             "url": "httpsschedule.import.io\/\/extractor",
             "description": "Get the list of schedules for all your extractors.",
@@ -229,11 +229,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "d71e1adf50906f8f570e5bf28078a25f",
+            "id": "42c5d232e538fca06a19c3b3c7614b68",
             "name": "Post Extractor",
             "url": "httpsschedule.import.io\/\/extractor",
             "description": "Schedule and extractor to run at a specific time.",
@@ -260,11 +260,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "262cbbb6887ef863f7cffe561d3b8566",
+            "id": "0aa471e8525d18d25ff5c00a76706b57",
             "name": "Delete Extractor Extractorid",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/",
             "description": "Delete an existing schedule.",
@@ -291,11 +291,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         },
         {
-            "id": "957f066a5f76997ea3dcc4ef00008f84",
+            "id": "7fbd986fc6012a811d8db704751358a4",
             "name": "Get Extractor Extractorid",
             "url": "httpsschedule.import.io\/\/extractor\/{extractorId}\/",
             "description": "Get the schedule of a particular extractor.",
@@ -322,7 +322,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "fc6525e392709a75d309286906023cef",
+            "collectionId": "c09893f6ad1c121f36f2f46fd931f835",
             "rawModeData": ""
         }
     ]
