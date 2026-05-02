@@ -17,7 +17,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/import-io/refs/heads/main/apis.yml
 created: '2026-03-26'
-modified: '2026-03-26'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: import-io:import-io-api
@@ -41,6 +41,8 @@ apis:
         url: https://api.docs.import.io/
       - type: Documentation
         url: https://docs.import.io/spec/saas/import-io-api-documentation/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/import-io/main/openapi/import-io-openapi.yml
 common:
   - type: Website
     url: https://www.import.io
