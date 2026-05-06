@@ -1,0 +1,745 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Import.io API
+  description: The Import.io API (v2.0) provides programmatic access to create, manage, and run web data extractors, retrieve
+    crawl run results, and manage reports. Everything available in the Import.io UI can be accomplished via the API, including
+    scheduling extractions, managing data pipelines, and exporting data in JSON, CSV, or Excel formats. Authenticated extraction
+    is supported for data behind login screens. Authentication is performed by passing your API key as the `_apikey` query
+    parameter on every request. You can find your API key in the Import.io dashboard under User Settings.
+  tags:
+  - Import
+  - Io
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: import-io
+    baseUri: https://api.import.io
+    description: Import.io API HTTP API.
+    authentication:
+      type: apikey
+      in: query
+      name: _apikey
+      value: '{{IMPORT_IO_TOKEN}}'
+    resources:
+    - name: users-current
+      path: /users/current
+      operations:
+      - name: getcurrentuser
+        method: GET
+        description: Get current user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: users-current-subscription
+      path: /users/current/subscription
+      operations:
+      - name: getcurrentusersubscription
+        method: GET
+        description: Get current user subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors
+      path: /extractors/
+      operations:
+      - name: listextractors
+        method: GET
+        description: List extractors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorid
+      path: /extractors/{extractorId}
+      operations:
+      - name: getextractor
+        method: GET
+        description: Get extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteextractor
+        method: DELETE
+        description: Archive extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorid-inputs
+      path: /extractors/{extractorId}/inputs
+      operations:
+      - name: getextractorinputs
+        method: GET
+        description: Get extractor inputs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateextractorinputs
+        method: PUT
+        description: Update extractor inputs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorid-start
+      path: /extractors/{extractorId}/start
+      operations:
+      - name: startextractor
+        method: POST
+        description: Start extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorid-stop
+      path: /extractors/{extractorId}/stop
+      operations:
+      - name: stopextractor
+        method: POST
+        description: Stop extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorid-duplicate
+      path: /extractors/{extractorId}/duplicate
+      operations:
+      - name: duplicateextractor
+        method: POST
+        description: Duplicate extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorid-credentials
+      path: /extractors/{extractorId}/credentials
+      operations:
+      - name: updateextractorcredentials
+        method: POST
+        description: Update extractor credentials
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: crawlruns
+      path: /crawlruns/
+      operations:
+      - name: listcrawlruns
+        method: GET
+        description: List crawl runs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: crawlruns-crawlrunid
+      path: /crawlruns/{crawlrunId}
+      operations:
+      - name: getcrawlrun
+        method: GET
+        description: Get crawl run
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: crawlruns-crawlrunid-filetype
+      path: /crawlruns/{crawlrunId}/{fileType}
+      operations:
+      - name: getcrawlrunfile
+        method: GET
+        description: Get crawl run results file
+        inputParameters:
+        - name: fileType
+          in: path
+          type: string
+          required: true
+          description: The file type to download.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reports
+      path: /reports/
+      operations:
+      - name: listreports
+        method: GET
+        description: List reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reports-reportid
+      path: /reports/{reportId}
+      operations:
+      - name: getreport
+        method: GET
+        description: Get report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletereport
+        method: DELETE
+        description: Delete report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reports-reportid-start
+      path: /reports/{reportId}/start
+      operations:
+      - name: startreport
+        method: POST
+        description: Start report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reports-reportid-reportruns
+      path: /reports/{reportId}/reportruns
+      operations:
+      - name: listreportrunsforreport
+        method: GET
+        description: List report runs for a report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reportruns
+      path: /reportruns/
+      operations:
+      - name: listreportruns
+        method: GET
+        description: List report runs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reportruns-reportrunid
+      path: /reportruns/{reportRunId}
+      operations:
+      - name: getreportrun
+        method: GET
+        description: Get report run
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reportruns-reportrunid-filetype
+      path: /reportruns/{reportRunId}/{fileType}
+      operations:
+      - name: getreportrunfile
+        method: GET
+        description: Get report run results file
+        inputParameters:
+        - name: fileType
+          in: path
+          type: string
+          required: true
+          description: The file type to download.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: import-io-rest
+    description: REST adapter for Import.io API.
+    resources:
+    - path: /users/current
+      name: getcurrentuser
+      operations:
+      - method: GET
+        name: getcurrentuser
+        description: Get current user
+        call: import-io.getcurrentuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /users/current/subscription
+      name: getcurrentusersubscription
+      operations:
+      - method: GET
+        name: getcurrentusersubscription
+        description: Get current user subscription
+        call: import-io.getcurrentusersubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/
+      name: listextractors
+      operations:
+      - method: GET
+        name: listextractors
+        description: List extractors
+        call: import-io.listextractors
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}
+      name: getextractor
+      operations:
+      - method: GET
+        name: getextractor
+        description: Get extractor
+        call: import-io.getextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}
+      name: deleteextractor
+      operations:
+      - method: DELETE
+        name: deleteextractor
+        description: Archive extractor
+        call: import-io.deleteextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}/inputs
+      name: getextractorinputs
+      operations:
+      - method: GET
+        name: getextractorinputs
+        description: Get extractor inputs
+        call: import-io.getextractorinputs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}/inputs
+      name: updateextractorinputs
+      operations:
+      - method: PUT
+        name: updateextractorinputs
+        description: Update extractor inputs
+        call: import-io.updateextractorinputs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}/start
+      name: startextractor
+      operations:
+      - method: POST
+        name: startextractor
+        description: Start extractor
+        call: import-io.startextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}/stop
+      name: stopextractor
+      operations:
+      - method: POST
+        name: stopextractor
+        description: Stop extractor
+        call: import-io.stopextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}/duplicate
+      name: duplicateextractor
+      operations:
+      - method: POST
+        name: duplicateextractor
+        description: Duplicate extractor
+        call: import-io.duplicateextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /extractors/{extractorId}/credentials
+      name: updateextractorcredentials
+      operations:
+      - method: POST
+        name: updateextractorcredentials
+        description: Update extractor credentials
+        call: import-io.updateextractorcredentials
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /crawlruns/
+      name: listcrawlruns
+      operations:
+      - method: GET
+        name: listcrawlruns
+        description: List crawl runs
+        call: import-io.listcrawlruns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /crawlruns/{crawlrunId}
+      name: getcrawlrun
+      operations:
+      - method: GET
+        name: getcrawlrun
+        description: Get crawl run
+        call: import-io.getcrawlrun
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /crawlruns/{crawlrunId}/{fileType}
+      name: getcrawlrunfile
+      operations:
+      - method: GET
+        name: getcrawlrunfile
+        description: Get crawl run results file
+        call: import-io.getcrawlrunfile
+        with:
+          fileType: rest.fileType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reports/
+      name: listreports
+      operations:
+      - method: GET
+        name: listreports
+        description: List reports
+        call: import-io.listreports
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reports/{reportId}
+      name: getreport
+      operations:
+      - method: GET
+        name: getreport
+        description: Get report
+        call: import-io.getreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reports/{reportId}
+      name: deletereport
+      operations:
+      - method: DELETE
+        name: deletereport
+        description: Delete report
+        call: import-io.deletereport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reports/{reportId}/start
+      name: startreport
+      operations:
+      - method: POST
+        name: startreport
+        description: Start report
+        call: import-io.startreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reports/{reportId}/reportruns
+      name: listreportrunsforreport
+      operations:
+      - method: GET
+        name: listreportrunsforreport
+        description: List report runs for a report
+        call: import-io.listreportrunsforreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reportruns/
+      name: listreportruns
+      operations:
+      - method: GET
+        name: listreportruns
+        description: List report runs
+        call: import-io.listreportruns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reportruns/{reportRunId}
+      name: getreportrun
+      operations:
+      - method: GET
+        name: getreportrun
+        description: Get report run
+        call: import-io.getreportrun
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /reportruns/{reportRunId}/{fileType}
+      name: getreportrunfile
+      operations:
+      - method: GET
+        name: getreportrunfile
+        description: Get report run results file
+        call: import-io.getreportrunfile
+        with:
+          fileType: rest.fileType
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: import-io-mcp
+    transport: http
+    description: MCP adapter for Import.io API for AI agent use.
+    tools:
+    - name: getcurrentuser
+      description: Get current user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getcurrentuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcurrentusersubscription
+      description: Get current user subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getcurrentusersubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listextractors
+      description: List extractors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.listextractors
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getextractor
+      description: Get extractor
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteextractor
+      description: Archive extractor
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: import-io.deleteextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getextractorinputs
+      description: Get extractor inputs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getextractorinputs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateextractorinputs
+      description: Update extractor inputs
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: import-io.updateextractorinputs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: startextractor
+      description: Start extractor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io.startextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stopextractor
+      description: Stop extractor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io.stopextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: duplicateextractor
+      description: Duplicate extractor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io.duplicateextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateextractorcredentials
+      description: Update extractor credentials
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io.updateextractorcredentials
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcrawlruns
+      description: List crawl runs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.listcrawlruns
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcrawlrun
+      description: Get crawl run
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getcrawlrun
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcrawlrunfile
+      description: Get crawl run results file
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getcrawlrunfile
+      with:
+        fileType: tools.fileType
+      inputParameters:
+      - name: fileType
+        type: string
+        description: The file type to download.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listreports
+      description: List reports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.listreports
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getreport
+      description: Get report
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletereport
+      description: Delete report
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: import-io.deletereport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: startreport
+      description: Start report
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io.startreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listreportrunsforreport
+      description: List report runs for a report
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.listreportrunsforreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listreportruns
+      description: List report runs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.listreportruns
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getreportrun
+      description: Get report run
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getreportrun
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getreportrunfile
+      description: Get report run results file
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io.getreportrunfile
+      with:
+        fileType: tools.fileType
+      inputParameters:
+      - name: fileType
+        type: string
+        description: The file type to download.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    IMPORT_IO_TOKEN: IMPORT_IO_TOKEN
