@@ -52,7 +52,7 @@ common:
     url: https://www.import.io/products
   - type: Pricing
     url: https://www.import.io/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://www.import.io/live-beta
   - type: Login
     url: https://app.import.io
