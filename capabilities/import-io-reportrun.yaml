@@ -1,0 +1,146 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Import.io API — ReportRun
+  description: 'Import.io API — ReportRun. 3 operations. Lead operation: List report runs. Self-contained Naftiko capability
+    covering one Import Io business surface.'
+  tags:
+  - Import Io
+  - ReportRun
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IMPORT_IO_API_KEY: IMPORT_IO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: import-io-reportrun
+    baseUri: https://api.import.io
+    description: Import.io API — ReportRun business capability. Self-contained, no shared references.
+    resources:
+    - name: reportruns
+      path: /reportruns/
+      operations:
+      - name: listreportruns
+        method: GET
+        description: List report runs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reportruns-reportRunId
+      path: /reportruns/{reportRunId}
+      operations:
+      - name: getreportrun
+        method: GET
+        description: Get report run
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: reportruns-reportRunId-fileType
+      path: /reportruns/{reportRunId}/{fileType}
+      operations:
+      - name: getreportrunfile
+        method: GET
+        description: Get report run results file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: fileType
+          in: path
+          type: string
+          description: The file type to download.
+          required: true
+    authentication:
+      type: apikey
+      key: _apikey
+      value: '{{env.IMPORT_IO_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: import-io-reportrun-rest
+    port: 8080
+    description: REST adapter for Import.io API — ReportRun. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/reportruns
+      name: reportruns
+      description: REST surface for reportruns.
+      operations:
+      - method: GET
+        name: listreportruns
+        description: List report runs
+        call: import-io-reportrun.listreportruns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/reportruns/{reportrunid}
+      name: reportruns-reportrunid
+      description: REST surface for reportruns-reportRunId.
+      operations:
+      - method: GET
+        name: getreportrun
+        description: Get report run
+        call: import-io-reportrun.getreportrun
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/reportruns/{reportrunid}/{filetype}
+      name: reportruns-reportrunid-filetype
+      description: REST surface for reportruns-reportRunId-fileType.
+      operations:
+      - method: GET
+        name: getreportrunfile
+        description: Get report run results file
+        call: import-io-reportrun.getreportrunfile
+        with:
+          fileType: rest.fileType
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: import-io-reportrun-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Import.io API — ReportRun. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-report-runs
+      description: List report runs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io-reportrun.listreportruns
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-report-run
+      description: Get report run
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io-reportrun.getreportrun
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-report-run-results-file
+      description: Get report run results file
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io-reportrun.getreportrunfile
+      with:
+        fileType: tools.fileType
+      outputParameters:
+      - type: object
+        mapping: $.

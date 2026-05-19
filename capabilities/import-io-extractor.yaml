@@ -1,0 +1,334 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Import.io API — Extractor
+  description: 'Import.io API — Extractor. 9 operations. Lead operation: List extractors. Self-contained Naftiko capability
+    covering one Import Io business surface.'
+  tags:
+  - Import Io
+  - Extractor
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IMPORT_IO_API_KEY: IMPORT_IO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: import-io-extractor
+    baseUri: https://api.import.io
+    description: Import.io API — Extractor business capability. Self-contained, no shared references.
+    resources:
+    - name: extractors
+      path: /extractors/
+      operations:
+      - name: listextractors
+        method: GET
+        description: List extractors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorId
+      path: /extractors/{extractorId}
+      operations:
+      - name: getextractor
+        method: GET
+        description: Get extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteextractor
+        method: DELETE
+        description: Archive extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorId-credentials
+      path: /extractors/{extractorId}/credentials
+      operations:
+      - name: updateextractorcredentials
+        method: POST
+        description: Update extractor credentials
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: extractors-extractorId-duplicate
+      path: /extractors/{extractorId}/duplicate
+      operations:
+      - name: duplicateextractor
+        method: POST
+        description: Duplicate extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorId-inputs
+      path: /extractors/{extractorId}/inputs
+      operations:
+      - name: getextractorinputs
+        method: GET
+        description: Get extractor inputs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateextractorinputs
+        method: PUT
+        description: Update extractor inputs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: extractors-extractorId-start
+      path: /extractors/{extractorId}/start
+      operations:
+      - name: startextractor
+        method: POST
+        description: Start extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: extractors-extractorId-stop
+      path: /extractors/{extractorId}/stop
+      operations:
+      - name: stopextractor
+        method: POST
+        description: Stop extractor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: _apikey
+      value: '{{env.IMPORT_IO_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: import-io-extractor-rest
+    port: 8080
+    description: REST adapter for Import.io API — Extractor. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/extractors
+      name: extractors
+      description: REST surface for extractors.
+      operations:
+      - method: GET
+        name: listextractors
+        description: List extractors
+        call: import-io-extractor.listextractors
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/extractors/{extractorid}
+      name: extractors-extractorid
+      description: REST surface for extractors-extractorId.
+      operations:
+      - method: GET
+        name: getextractor
+        description: Get extractor
+        call: import-io-extractor.getextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteextractor
+        description: Archive extractor
+        call: import-io-extractor.deleteextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/extractors/{extractorid}/credentials
+      name: extractors-extractorid-credentials
+      description: REST surface for extractors-extractorId-credentials.
+      operations:
+      - method: POST
+        name: updateextractorcredentials
+        description: Update extractor credentials
+        call: import-io-extractor.updateextractorcredentials
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/extractors/{extractorid}/duplicate
+      name: extractors-extractorid-duplicate
+      description: REST surface for extractors-extractorId-duplicate.
+      operations:
+      - method: POST
+        name: duplicateextractor
+        description: Duplicate extractor
+        call: import-io-extractor.duplicateextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/extractors/{extractorid}/inputs
+      name: extractors-extractorid-inputs
+      description: REST surface for extractors-extractorId-inputs.
+      operations:
+      - method: GET
+        name: getextractorinputs
+        description: Get extractor inputs
+        call: import-io-extractor.getextractorinputs
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateextractorinputs
+        description: Update extractor inputs
+        call: import-io-extractor.updateextractorinputs
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/extractors/{extractorid}/start
+      name: extractors-extractorid-start
+      description: REST surface for extractors-extractorId-start.
+      operations:
+      - method: POST
+        name: startextractor
+        description: Start extractor
+        call: import-io-extractor.startextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/extractors/{extractorid}/stop
+      name: extractors-extractorid-stop
+      description: REST surface for extractors-extractorId-stop.
+      operations:
+      - method: POST
+        name: stopextractor
+        description: Stop extractor
+        call: import-io-extractor.stopextractor
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: import-io-extractor-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Import.io API — Extractor. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-extractors
+      description: List extractors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io-extractor.listextractors
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-extractor
+      description: Get extractor
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io-extractor.getextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: archive-extractor
+      description: Archive extractor
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: import-io-extractor.deleteextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-extractor-credentials
+      description: Update extractor credentials
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io-extractor.updateextractorcredentials
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: duplicate-extractor
+      description: Duplicate extractor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io-extractor.duplicateextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-extractor-inputs
+      description: Get extractor inputs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: import-io-extractor.getextractorinputs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-extractor-inputs
+      description: Update extractor inputs
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: import-io-extractor.updateextractorinputs
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: start-extractor
+      description: Start extractor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io-extractor.startextractor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stop-extractor
+      description: Stop extractor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: import-io-extractor.stopextractor
+      outputParameters:
+      - type: object
+        mapping: $.
