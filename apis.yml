@@ -69,6 +69,8 @@ common:
     url: https://www.import.io/data-extraction
   - type: Web Scraping as a Service
     url: https://www.import.io/web-scraping-as-a-service
+  - type: LLMsTxt
+    url: https://api.docs.import.io/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
