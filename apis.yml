@@ -1,7 +1,8 @@
 aid: import-io
 name: Import.io
-description: Import.io is an AI-native web data extraction and integration platform trusted by enterprises to turn the web
-  into structured, actionable intelligence. It manages extraction, transformation, delivery, and compliance end-to-end with
+description: >-
+  Import.io is an AI-native web data extraction and integration platform trusted by enterprises to turn the web into
+  structured, actionable intelligence. It manages extraction, transformation, delivery, and compliance end-to-end with
   adaptive intelligence that automatically handles website changes.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -18,34 +19,25 @@ specificationVersion: '0.19'
 apis:
   - aid: import-io:import-io-api
     name: Import.io API
-    description: The Import.io API (v2.0) provides programmatic access to create, manage, and run web data extractors, as well
-      as retrieve extracted data. Everything available in the UI can be done via the API including scheduling extractions, managing
-      data pipelines, and exporting data in JSON, CSV, or Excel formats. Supports authenticated extraction for data behind login
-      screens.
+    description: >-
+      The Import.io API (v2.0) provides programmatic access to create, manage, and run web data extractors, as well as
+      retrieve extracted data. Everything available in the UI can be done via the API including scheduling extractions,
+      managing data pipelines, and exporting data in JSON, CSV, or Excel formats. Supports authenticated extraction for
+      data behind login screens.
     humanURL: https://www.import.io
     baseURL: https://api.import.io
     tags:
-    - Data Extraction
-    - Data Integration
-    - No-Code
-    - Web Scraping
+      - Data Extraction
+      - Data Integration
+      - No-Code
+      - Web Scraping
     properties:
-    - type: Documentation
-      url: https://api.docs.import.io/
-    - type: Documentation
-      url: https://docs.import.io/spec/saas/import-io-api-documentation/
-    - type: OpenAPI
-      url: https://raw.githubusercontent.com/api-evangelist/import-io/main/openapi/import-io-openapi.yml
-    - type: NaftikoCapability
-      url: capabilities/import-io-crawlrun.yaml
-    - type: NaftikoCapability
-      url: capabilities/import-io-extractor.yaml
-    - type: NaftikoCapability
-      url: capabilities/import-io-report.yaml
-    - type: NaftikoCapability
-      url: capabilities/import-io-reportrun.yaml
-    - type: NaftikoCapability
-      url: capabilities/import-io-user.yaml
+      - type: Documentation
+        url: https://api.docs.import.io/
+      - type: Documentation
+        url: https://docs.import.io/spec/saas/import-io-api-documentation/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/import-io/main/openapi/import-io-openapi.yml
 common:
   - type: GitHubOrganization
     url: https://github.com/import-io

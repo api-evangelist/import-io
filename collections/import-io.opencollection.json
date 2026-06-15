@@ -1,0 +1,712 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Import.io API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "_apikey",
+      "value": "{{_apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/users/current",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Get information on the currently authenticated user."
+        },
+        {
+          "info": {
+            "name": "Get current user subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/users/current/subscription",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Get subscription information for the current user including plan, usage, and billing details."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Extractor",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List extractors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/extractors/",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of extractors owned by the authenticated user."
+        },
+        {
+          "info": {
+            "name": "Get extractor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/extractors/:extractorId",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Get information about a specific extractor."
+        },
+        {
+          "info": {
+            "name": "Archive extractor",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.import.io/extractors/:extractorId",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Archive (delete) an extractor. Data is retained in the database but the extractor is hidden from the UI and cannot be run."
+        },
+        {
+          "info": {
+            "name": "Get extractor inputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/extractors/:extractorId/inputs",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Retrieve the current inputs configured for an extractor."
+        },
+        {
+          "info": {
+            "name": "Update extractor inputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.import.io/extractors/:extractorId/inputs",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the inputs (URLs) configured for an extractor."
+        },
+        {
+          "info": {
+            "name": "Start extractor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.import.io/extractors/:extractorId/start",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Trigger an extractor to run."
+        },
+        {
+          "info": {
+            "name": "Stop extractor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.import.io/extractors/:extractorId/stop",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Halt a running extractor."
+        },
+        {
+          "info": {
+            "name": "Duplicate extractor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.import.io/extractors/:extractorId/duplicate",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Create a copy of an existing extractor."
+        },
+        {
+          "info": {
+            "name": "Update extractor credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.import.io/extractors/:extractorId/credentials",
+            "params": [
+              {
+                "name": "extractorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the extractor."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the authentication credentials used by an extractor for sites behind login."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Crawlrun",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List crawl runs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/crawlruns/",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List recent crawl runs with optional filters and pagination."
+        },
+        {
+          "info": {
+            "name": "Get crawl run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/crawlruns/:crawlrunId",
+            "params": [
+              {
+                "name": "crawlrunId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the crawl run."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Retrieve information about a specific crawl run."
+        },
+        {
+          "info": {
+            "name": "Get crawl run results file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/crawlruns/:crawlrunId/:fileType",
+            "params": [
+              {
+                "name": "crawlrunId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the crawl run."
+              },
+              {
+                "name": "fileType",
+                "value": "",
+                "type": "path",
+                "description": "The file type to download."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Download the result file for a crawl run in the requested format."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Report",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reports/",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List reports with optional pagination and sorting."
+        },
+        {
+          "info": {
+            "name": "Get report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reports/:reportId",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Retrieve information about a specific report."
+        },
+        {
+          "info": {
+            "name": "Delete report",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.import.io/reports/:reportId",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Delete a report."
+        },
+        {
+          "info": {
+            "name": "Start report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.import.io/reports/:reportId/start",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Execute a report."
+        },
+        {
+          "info": {
+            "name": "List report runs for a report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reports/:reportId/reportruns",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List runs for a specific report."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ReportRun",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List report runs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reportruns/",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List all report runs across reports with optional filters."
+        },
+        {
+          "info": {
+            "name": "Get report run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reportruns/:reportRunId",
+            "params": [
+              {
+                "name": "reportRunId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report run."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Retrieve information about a specific report run."
+        },
+        {
+          "info": {
+            "name": "Get report run results file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reportruns/:reportRunId/:fileType",
+            "params": [
+              {
+                "name": "reportRunId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report run."
+              },
+              {
+                "name": "fileType",
+                "value": "",
+                "type": "path",
+                "description": "The file type to download."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Download the result file for a report run. JSON output is only available for Change reports."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
