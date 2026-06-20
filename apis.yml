@@ -5,7 +5,7 @@ description: >-
   structured, actionable intelligence. It manages extraction, transformation, delivery, and compliance end-to-end with
   adaptive intelligence that automatically handles website changes.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Data Aggregation
   - Data Extraction
