@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/import-io-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyAuth
+  type: apiKey
+  in: query
+  parameter: _apikey
+  description: API key obtained from the Import.io dashboard User Settings.
+  sources:
+  - openapi/import-io-openapi.yml
