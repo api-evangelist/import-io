@@ -39,6 +39,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/import-io/main/openapi/import-io-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/import-io-agentic-access.yml
   - type: DomainSecurity
     url: security/import-io-domain-security.yml
   - type: Authentication
