@@ -1,0 +1,194 @@
+openapi: 3.0.3
+info:
+  title: Import.io Crawlrun User API
+  description: 'The Import.io API (v2.0) provides programmatic access to create, manage, and run
+
+    web data extractors, retrieve crawl run results, and manage reports. Everything
+
+    available in the Import.io UI can be accomplished via the API, including
+
+    scheduling extractions, managing data pipelines, and exporting data in JSON,
+
+    CSV, or Excel formats. Authenticated extraction is supported for data behind
+
+    login screens.
+
+
+    Authentication is performed by passing your API key as the `_apikey` query
+
+    parameter on every request. You can find your API key in the Import.io
+
+    dashboard under User Settings.
+
+    '
+  version: '2.0'
+  contact:
+    name: Import.io Support
+    url: https://help.import.io/
+  license:
+    name: Proprietary
+    url: https://www.import.io/terms-of-use/
+servers:
+- url: https://api.import.io
+  description: Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: User
+  description: Information about the authenticated user and their subscription.
+paths:
+  /users/current:
+    get:
+      tags:
+      - User
+      summary: Get current user
+      description: Get information on the currently authenticated user.
+      operationId: getCurrentUser
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: User information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /users/current/subscription:
+    get:
+      tags:
+      - User
+      summary: Get current user subscription
+      description: Get subscription information for the current user including plan, usage, and billing details.
+      operationId: getCurrentUserSubscription
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Subscription information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
+    User:
+      type: object
+      properties:
+        guid:
+          type: string
+          format: uuid
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        company:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        passwordSetAt:
+          type: string
+          format: date-time
+        lastLoginDateTime:
+          type: string
+          format: date-time
+        loginAttemptsLeft:
+          type: integer
+        archived:
+          type: boolean
+        _meta:
+          $ref: '#/components/schemas/Meta'
+    Subscription:
+      type: object
+      properties:
+        userId:
+          type: string
+          format: uuid
+        planCode:
+          type: string
+        currentUsage:
+          type: integer
+        maxUsage:
+          type: integer
+        expiryDate:
+          type: string
+          format: date-time
+        nextBillingDate:
+          type: string
+          format: date-time
+        autoRenew:
+          type: boolean
+        trial:
+          type: boolean
+        custom:
+          type: boolean
+        features:
+          type: array
+          items:
+            type: string
+        overage:
+          type: object
+          additionalProperties: true
+  parameters:
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: _apikey
+      description: API key obtained from the Import.io dashboard User Settings.

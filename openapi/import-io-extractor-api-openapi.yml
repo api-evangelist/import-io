@@ -1,0 +1,399 @@
+openapi: 3.0.3
+info:
+  title: Import.io Crawlrun Extractor API
+  description: 'The Import.io API (v2.0) provides programmatic access to create, manage, and run
+
+    web data extractors, retrieve crawl run results, and manage reports. Everything
+
+    available in the Import.io UI can be accomplished via the API, including
+
+    scheduling extractions, managing data pipelines, and exporting data in JSON,
+
+    CSV, or Excel formats. Authenticated extraction is supported for data behind
+
+    login screens.
+
+
+    Authentication is performed by passing your API key as the `_apikey` query
+
+    parameter on every request. You can find your API key in the Import.io
+
+    dashboard under User Settings.
+
+    '
+  version: '2.0'
+  contact:
+    name: Import.io Support
+    url: https://help.import.io/
+  license:
+    name: Proprietary
+    url: https://www.import.io/terms-of-use/
+servers:
+- url: https://api.import.io
+  description: Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Extractor
+  description: Create, configure, run, and manage web data extractors.
+paths:
+  /extractors/:
+    get:
+      tags:
+      - Extractor
+      summary: List extractors
+      description: Returns a paginated list of extractors owned by the authenticated user.
+      operationId: listExtractors
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Sort'
+      - $ref: '#/components/parameters/SortDirection'
+      responses:
+        '200':
+          description: Array of extractors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Extractor'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /extractors/{extractorId}:
+    parameters:
+    - $ref: '#/components/parameters/ExtractorId'
+    - $ref: '#/components/parameters/ApiKey'
+    get:
+      tags:
+      - Extractor
+      summary: Get extractor
+      description: Get information about a specific extractor.
+      operationId: getExtractor
+      responses:
+        '200':
+          description: Extractor details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Extractor'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+      - Extractor
+      summary: Archive extractor
+      description: Archive (delete) an extractor. Data is retained in the database but the extractor is hidden from the UI and cannot be run.
+      operationId: deleteExtractor
+      responses:
+        '200':
+          description: Archived extractor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Extractor'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /extractors/{extractorId}/inputs:
+    parameters:
+    - $ref: '#/components/parameters/ExtractorId'
+    - $ref: '#/components/parameters/ApiKey'
+    get:
+      tags:
+      - Extractor
+      summary: Get extractor inputs
+      description: Retrieve the current inputs configured for an extractor.
+      operationId: getExtractorInputs
+      responses:
+        '200':
+          description: Extractor inputs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtractorInputs'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+      - Extractor
+      summary: Update extractor inputs
+      description: Update the inputs (URLs) configured for an extractor.
+      operationId: updateExtractorInputs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExtractorInputs'
+      responses:
+        '200':
+          description: Inputs updated
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /extractors/{extractorId}/start:
+    post:
+      tags:
+      - Extractor
+      summary: Start extractor
+      description: Trigger an extractor to run.
+      operationId: startExtractor
+      parameters:
+      - $ref: '#/components/parameters/ExtractorId'
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Extractor started
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /extractors/{extractorId}/stop:
+    post:
+      tags:
+      - Extractor
+      summary: Stop extractor
+      description: Halt a running extractor.
+      operationId: stopExtractor
+      parameters:
+      - $ref: '#/components/parameters/ExtractorId'
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Extractor stopped
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /extractors/{extractorId}/duplicate:
+    post:
+      tags:
+      - Extractor
+      summary: Duplicate extractor
+      description: Create a copy of an existing extractor.
+      operationId: duplicateExtractor
+      parameters:
+      - $ref: '#/components/parameters/ExtractorId'
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Duplicated extractor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Extractor'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /extractors/{extractorId}/credentials:
+    post:
+      tags:
+      - Extractor
+      summary: Update extractor credentials
+      description: Update the authentication credentials used by an extractor for sites behind login.
+      operationId: updateExtractorCredentials
+      parameters:
+      - $ref: '#/components/parameters/ExtractorId'
+      - $ref: '#/components/parameters/ApiKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Credentials'
+      responses:
+        '200':
+          description: Credentials updated
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+components:
+  schemas:
+    Extractor:
+      type: object
+      properties:
+        guid:
+          type: string
+          format: uuid
+        name:
+          type: string
+        fields:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        tags:
+          type: array
+          items:
+            type: string
+        archived:
+          type: boolean
+        proxy:
+          type: object
+          additionalProperties: true
+        webhooks:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        chainingConfig:
+          type: object
+          additionalProperties: true
+        credentialsId:
+          type: string
+          format: uuid
+        _meta:
+          $ref: '#/components/schemas/Meta'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
+    ExtractorInputs:
+      type: object
+      properties:
+        _url:
+          type: string
+          description: One or more URLs to extract data from. Multiple URLs may be newline-separated.
+    Credentials:
+      type: object
+      required:
+      - username
+      - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+          format: password
+  responses:
+    ServerError:
+      description: Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Forbidden.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  parameters:
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
+    Sort:
+      name: _sort
+      in: query
+      required: false
+      description: Field to sort by, e.g. `meta_created_at`.
+      schema:
+        type: string
+    ExtractorId:
+      name: extractorId
+      in: path
+      required: true
+      description: Unique identifier of the extractor.
+      schema:
+        type: string
+        format: uuid
+    PerPage:
+      name: _perpage
+      in: query
+      required: false
+      description: Number of items to return per page.
+      schema:
+        type: integer
+    Page:
+      name: _page
+      in: query
+      required: false
+      description: Page number to return (default 1).
+      schema:
+        type: integer
+        default: 1
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: _apikey
+      description: API key obtained from the Import.io dashboard User Settings.

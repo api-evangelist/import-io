@@ -1,0 +1,316 @@
+openapi: 3.0.3
+info:
+  title: Import.io Crawlrun Report API
+  description: 'The Import.io API (v2.0) provides programmatic access to create, manage, and run
+
+    web data extractors, retrieve crawl run results, and manage reports. Everything
+
+    available in the Import.io UI can be accomplished via the API, including
+
+    scheduling extractions, managing data pipelines, and exporting data in JSON,
+
+    CSV, or Excel formats. Authenticated extraction is supported for data behind
+
+    login screens.
+
+
+    Authentication is performed by passing your API key as the `_apikey` query
+
+    parameter on every request. You can find your API key in the Import.io
+
+    dashboard under User Settings.
+
+    '
+  version: '2.0'
+  contact:
+    name: Import.io Support
+    url: https://help.import.io/
+  license:
+    name: Proprietary
+    url: https://www.import.io/terms-of-use/
+servers:
+- url: https://api.import.io
+  description: Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Report
+  description: Manage reports built on top of extractors.
+paths:
+  /reports/:
+    get:
+      tags:
+      - Report
+      summary: List reports
+      description: List reports with optional pagination and sorting.
+      operationId: listReports
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Sort'
+      - $ref: '#/components/parameters/SortDirection'
+      responses:
+        '200':
+          description: Array of reports
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Report'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /reports/{reportId}:
+    parameters:
+    - $ref: '#/components/parameters/ReportId'
+    - $ref: '#/components/parameters/ApiKey'
+    get:
+      tags:
+      - Report
+      summary: Get report
+      description: Retrieve information about a specific report.
+      operationId: getReport
+      responses:
+        '200':
+          description: Report details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+      - Report
+      summary: Delete report
+      description: Delete a report.
+      operationId: deleteReport
+      responses:
+        '200':
+          description: Report deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /reports/{reportId}/start:
+    post:
+      tags:
+      - Report
+      summary: Start report
+      description: Execute a report.
+      operationId: startReport
+      parameters:
+      - $ref: '#/components/parameters/ReportId'
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Report started
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /reports/{reportId}/reportruns:
+    get:
+      tags:
+      - Report
+      summary: List report runs for a report
+      description: List runs for a specific report.
+      operationId: listReportRunsForReport
+      parameters:
+      - $ref: '#/components/parameters/ReportId'
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Sort'
+      - $ref: '#/components/parameters/SortDirection'
+      responses:
+        '200':
+          description: Array of report runs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportRun'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    ServerError:
+      description: Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
+    ReportRun:
+      type: object
+      properties:
+        guid:
+          type: string
+          format: uuid
+        name:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+        reportId:
+          type: string
+          format: uuid
+        configId:
+          type: string
+          format: uuid
+        extractorId:
+          type: string
+          format: uuid
+        inputs:
+          type: object
+          additionalProperties: true
+        csv:
+          type: string
+        json:
+          type: string
+        log:
+          type: string
+        pdf:
+          type: string
+        xlsx:
+          type: string
+        summary:
+          type: object
+          additionalProperties: true
+        errorMessage:
+          type: string
+        archived:
+          type: boolean
+        _meta:
+          $ref: '#/components/schemas/Meta'
+    Report:
+      type: object
+      properties:
+        guid:
+          type: string
+          format: uuid
+        name:
+          type: string
+        type:
+          type: string
+        extractorId:
+          type: string
+          format: uuid
+        latestConfigId:
+          type: string
+          format: uuid
+        archived:
+          type: boolean
+        _meta:
+          $ref: '#/components/schemas/Meta'
+  parameters:
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
+    ReportId:
+      name: reportId
+      in: path
+      required: true
+      description: Unique identifier of the report.
+      schema:
+        type: string
+        format: uuid
+    Sort:
+      name: _sort
+      in: query
+      required: false
+      description: Field to sort by, e.g. `meta_created_at`.
+      schema:
+        type: string
+    PerPage:
+      name: _perpage
+      in: query
+      required: false
+      description: Number of items to return per page.
+      schema:
+        type: integer
+    Page:
+      name: _page
+      in: query
+      required: false
+      description: Page number to return (default 1).
+      schema:
+        type: integer
+        default: 1
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: _apikey
+      description: API key obtained from the Import.io dashboard User Settings.
