@@ -5,7 +5,20 @@ description: >-
   structured, actionable intelligence. It manages extraction, transformation, delivery, and compliance end-to-end with
   adaptive intelligence that automatically handles website changes.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/import-io.png
 tags:
   - Data Aggregation
   - Data Extraction
@@ -17,27 +30,76 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: import-io:import-io-api
-    name: Import.io API
-    description: >-
-      The Import.io API (v2.0) provides programmatic access to create, manage, and run web data extractors, as well as
-      retrieve extracted data. Everything available in the UI can be done via the API including scheduling extractions,
-      managing data pipelines, and exporting data in JSON, CSV, or Excel formats. Supports authenticated extraction for
-      data behind login screens.
-    humanURL: https://www.import.io
-    baseURL: https://api.import.io
-    tags:
-      - Data Extraction
-      - Data Integration
-      - No-Code
-      - Web Scraping
-    properties:
-      - type: Documentation
-        url: https://api.docs.import.io/
-      - type: Documentation
-        url: https://docs.import.io/spec/saas/import-io-api-documentation/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/import-io/main/openapi/import-io-openapi.yml
+- aid: import-io:import-io-crawlrun-api
+  name: Import.io Crawlrun API
+  description: Retrieve crawl run executions and their result files.
+  humanURL: https://www.import.io
+  baseURL: https://api.import.io
+  tags:
+  - Crawlrun
+  properties:
+  - type: OpenAPI
+    url: openapi/import-io-crawlrun-api-openapi.yml
+  - type: Documentation
+    url: https://api.docs.import.io/
+  - type: Documentation
+    url: https://docs.import.io/spec/saas/import-io-api-documentation/
+- aid: import-io:import-io-extractor-api
+  name: Import.io Extractor API
+  description: Create, configure, run, and manage web data extractors.
+  humanURL: https://www.import.io
+  baseURL: https://api.import.io
+  tags:
+  - Extractor
+  properties:
+  - type: OpenAPI
+    url: openapi/import-io-extractor-api-openapi.yml
+  - type: Documentation
+    url: https://api.docs.import.io/
+  - type: Documentation
+    url: https://docs.import.io/spec/saas/import-io-api-documentation/
+- aid: import-io:import-io-report-api
+  name: Import.io Report API
+  description: Manage reports built on top of extractors.
+  humanURL: https://www.import.io
+  baseURL: https://api.import.io
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/import-io-report-api-openapi.yml
+  - type: Documentation
+    url: https://api.docs.import.io/
+  - type: Documentation
+    url: https://docs.import.io/spec/saas/import-io-api-documentation/
+- aid: import-io:import-io-reportrun-api
+  name: Import.io ReportRun API
+  description: Retrieve report run executions and their result files.
+  humanURL: https://www.import.io
+  baseURL: https://api.import.io
+  tags:
+  - ReportRun
+  properties:
+  - type: OpenAPI
+    url: openapi/import-io-reportrun-api-openapi.yml
+  - type: Documentation
+    url: https://api.docs.import.io/
+  - type: Documentation
+    url: https://docs.import.io/spec/saas/import-io-api-documentation/
+- aid: import-io:import-io-user-api
+  name: Import.io User API
+  description: Information about the authenticated user and their subscription.
+  humanURL: https://www.import.io
+  baseURL: https://api.import.io
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/import-io-user-api-openapi.yml
+  - type: Documentation
+    url: https://api.docs.import.io/
+  - type: Documentation
+    url: https://docs.import.io/spec/saas/import-io-api-documentation/
 common:
   - type: AgenticAccess
     url: agentic-access/import-io-agentic-access.yml
