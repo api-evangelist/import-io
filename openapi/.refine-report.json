@@ -1,0 +1,22 @@
+{
+  "provider": "import-io",
+  "sources": [
+    "import-io-crawlrun-api-openapi.yml",
+    "import-io-extractor-api-openapi.yml",
+    "import-io-report-api-openapi.yml",
+    "import-io-reportrun-api-openapi.yml",
+    "import-io-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "import-io-crawlrun-api-openapi.yml",
+    "import-io-extractor-api-openapi.yml",
+    "import-io-report-api-openapi.yml",
+    "import-io-reportrun-api-openapi.yml",
+    "import-io-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
