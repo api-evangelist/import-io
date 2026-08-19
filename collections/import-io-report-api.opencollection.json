@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Import.io Crawlrun Report API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "_apikey",
+      "value": "{{_apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Report",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reports/",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List reports with optional pagination and sorting."
+        },
+        {
+          "info": {
+            "name": "Get report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reports/:reportId",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Retrieve information about a specific report."
+        },
+        {
+          "info": {
+            "name": "Delete report",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.import.io/reports/:reportId",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Delete a report."
+        },
+        {
+          "info": {
+            "name": "Start report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.import.io/reports/:reportId/start",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Execute a report."
+        },
+        {
+          "info": {
+            "name": "List report runs for a report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reports/:reportId/reportruns",
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List runs for a specific report."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

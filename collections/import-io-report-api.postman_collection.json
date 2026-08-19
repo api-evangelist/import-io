@@ -1,0 +1,1253 @@
+{
+  "item": [
+    {
+      "id": "3e0083db-200a-4f19-a8cf-94e054121e8e",
+      "name": "Report",
+      "description": {
+        "content": "Manage reports built on top of extractors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1e58794c-f360-4fc9-8f7b-011b9acda5ce",
+          "name": "List reports",
+          "request": {
+            "name": "List reports",
+            "description": {
+              "content": "List reports with optional pagination and sorting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "_perpage",
+                  "value": "<integer>",
+                  "description": "Number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "_page",
+                  "value": "1",
+                  "description": "Page number to return (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sort",
+                  "value": "<string>",
+                  "description": "Field to sort by, e.g. `meta_created_at`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sortDirection",
+                  "value": "DESC",
+                  "description": "Sort direction."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5c5e281-5897-4ec5-ac0f-1e4bf1c8a944",
+              "name": "Array of reports",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"guid\": \"3fa42165-ac81-71c5-3b1d-cd9e0ee57031\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"extractorId\": \"9325fa7a-2be5-ea11-2134-b8b490c5081b\",\n    \"latestConfigId\": \"6a66bfda-2eee-a9e8-1daa-efb2700559b1\",\n    \"archived\": true,\n    \"_meta\": {\n      \"createdAt\": \"1969-12-02T07:42:55.560Z\",\n      \"modifiedAt\": \"1988-04-30T14:34:05.115Z\",\n      \"ownerId\": \"70a1f95b-89e6-4a3a-a8b6-41c7ea638550\",\n      \"creatorId\": \"2105762e-5320-3fde-c1da-18da2c5e7aee\",\n      \"editorId\": \"432338c4-34a8-3cee-ea57-4614f0ae2e16\"\n    }\n  },\n  {\n    \"guid\": \"84b80185-6663-7422-be53-966eeef426f2\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"extractorId\": \"5768a3f6-a166-730c-cd51-d72937ef372e\",\n    \"latestConfigId\": \"77beb8a8-b104-25b5-9eb6-8867185ee55d\",\n    \"archived\": true,\n    \"_meta\": {\n      \"createdAt\": \"1959-07-04T11:59:48.605Z\",\n      \"modifiedAt\": \"2022-08-16T01:18:24.085Z\",\n      \"ownerId\": \"92045e2f-c7e9-a395-4a2a-ddf25cf5041a\",\n      \"creatorId\": \"6af21fba-ebbf-8025-da36-516c09230e54\",\n      \"editorId\": \"d734f950-84fa-9036-a367-285705a50ba4\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78325678-d03d-47b0-a56e-0ae7e80ace5b",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36cde12b-91d2-4650-a5d3-7ca91f92a775",
+          "name": "Get report",
+          "request": {
+            "name": "Get report",
+            "description": {
+              "content": "Retrieve information about a specific report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                ":reportId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "reportId",
+                  "description": "(Required) Unique identifier of the report."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c2112d4-e8dc-4be4-8c55-d36b672da64e",
+              "name": "Report details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"ae86d349-27f9-d576-1371-f0330e2c7c52\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"extractorId\": \"c1b815e6-d42d-e244-4f95-7b2e05958a38\",\n  \"latestConfigId\": \"d466379e-ac88-e263-b59e-0218c59e83eb\",\n  \"archived\": true,\n  \"_meta\": {\n    \"createdAt\": \"2002-04-08T17:37:53.655Z\",\n    \"modifiedAt\": \"1969-06-11T12:40:18.983Z\",\n    \"ownerId\": \"604ff74b-e3e1-5c79-b5a7-547d128e31ad\",\n    \"creatorId\": \"e6d708ca-e392-93db-3598-8a480779d58c\",\n    \"editorId\": \"2cd436ab-2eeb-8702-c332-d62952278cc2\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e94efc49-6b1d-4818-99dd-89e90db82589",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61b9ee79-5eaf-4fb3-8f52-34f583a4753d",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "991453ad-b0c2-4995-bf70-3767820b406c",
+          "name": "Delete report",
+          "request": {
+            "name": "Delete report",
+            "description": {
+              "content": "Delete a report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                ":reportId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "reportId",
+                  "description": "(Required) Unique identifier of the report."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9e15641-e67a-4405-b0ee-534ecc8e0de6",
+              "name": "Report deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "83bc03ac-09ff-4298-8ce9-3070cd09bc4b",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9865430-a996-4e8e-885d-0d22cc887856",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8279f54b-52d6-4e28-8a57-69b042caf9a2",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4888249-b068-4ab5-b773-f5684b61fc59",
+          "name": "Start report",
+          "request": {
+            "name": "Start report",
+            "description": {
+              "content": "Execute a report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                ":reportId",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "reportId",
+                  "description": "(Required) Unique identifier of the report."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5b0e608-3c82-48e6-96c3-0e52e9a2903e",
+              "name": "Report started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d83a030-151b-490b-9dc0-cfe5d5aefb1b",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b662ab25-5c31-4821-8e56-bfb3f7ceb7d7",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2734233-7c15-44f7-beb4-99a4ba3100d7",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e2191cd-afb4-4e60-b8d1-4383b2e7f963",
+          "name": "List report runs for a report",
+          "request": {
+            "name": "List report runs for a report",
+            "description": {
+              "content": "List runs for a specific report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reports",
+                ":reportId",
+                "reportruns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "_perpage",
+                  "value": "<integer>",
+                  "description": "Number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "_page",
+                  "value": "1",
+                  "description": "Page number to return (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sort",
+                  "value": "<string>",
+                  "description": "Field to sort by, e.g. `meta_created_at`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sortDirection",
+                  "value": "DESC",
+                  "description": "Sort direction."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "reportId",
+                  "description": "(Required) Unique identifier of the report."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a5eaf5d-67c4-4390-8e0e-f903f4e7caef",
+              "name": "Array of report runs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "reportruns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"guid\": \"e8e6846c-58ad-a69c-d053-e02d02f0e8a6\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"reportId\": \"d59c9772-bd68-1975-7ae8-bf49d1f1f372\",\n    \"configId\": \"4cdf7024-0a7e-2137-a4f1-1884e2a39a4f\",\n    \"extractorId\": \"bda8eef0-6fed-69ad-aef3-ce6bb7cc9f03\",\n    \"inputs\": {\n      \"key_0\": \"string\"\n    },\n    \"csv\": \"string\",\n    \"json\": \"string\",\n    \"log\": \"string\",\n    \"pdf\": \"string\",\n    \"xlsx\": \"string\",\n    \"summary\": {\n      \"key_0\": false\n    },\n    \"errorMessage\": \"string\",\n    \"archived\": false,\n    \"_meta\": {\n      \"createdAt\": \"2023-05-16T15:02:36.298Z\",\n      \"modifiedAt\": \"2010-03-18T19:37:56.430Z\",\n      \"ownerId\": \"b31de155-0bbf-26ea-9422-0234b05a3520\",\n      \"creatorId\": \"31771e7f-bd12-44d1-e703-4183777003c5\",\n      \"editorId\": \"c7c015b5-abfc-fe7e-1e5b-8528dfc54abc\"\n    }\n  },\n  {\n    \"guid\": \"85ff412d-b81a-3106-a17b-f62162f42469\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"reportId\": \"97704bb2-6694-047e-c1e7-5ac334af4b16\",\n    \"configId\": \"4fe32fb0-b50a-8c74-15cc-7419963f2fe1\",\n    \"extractorId\": \"09f88110-0376-7a9d-e52d-bc95630aaba3\",\n    \"inputs\": {\n      \"key_0\": 4066.586436713769,\n      \"key_1\": 2751.4813652433113\n    },\n    \"csv\": \"string\",\n    \"json\": \"string\",\n    \"log\": \"string\",\n    \"pdf\": \"string\",\n    \"xlsx\": \"string\",\n    \"summary\": {\n      \"key_0\": false,\n      \"key_1\": 203\n    },\n    \"errorMessage\": \"string\",\n    \"archived\": true,\n    \"_meta\": {\n      \"createdAt\": \"2011-07-19T01:21:03.512Z\",\n      \"modifiedAt\": \"1960-08-26T23:18:51.339Z\",\n      \"ownerId\": \"6d3b7924-0d03-c933-82a1-873e92afc45c\",\n      \"creatorId\": \"65817a6b-b188-bada-eb01-ac86516a0c86\",\n      \"editorId\": \"2041d5ef-01e9-76be-1312-49ca1ada0f92\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4daf398f-19c7-4687-a3b1-cccaa9ac262a",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "reportruns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "49b4c4dd-cce4-4e67-8a59-5e25b561ff96",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reports",
+                    ":reportId",
+                    "reportruns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportId",
+                      "description": "(Required) Unique identifier of the report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1267,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.import.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "_apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9a7d232d-bd71-44f2-adb3-c50b728b505f",
+    "name": "Import.io Crawlrun Report API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Import.io API (v2.0) provides programmatic access to create, manage, and run\nweb data extractors, retrieve crawl run results, and manage reports. Everything\navailable in the Import.io UI can be accomplished via the API, including\nscheduling extractions, managing data pipelines, and exporting data in JSON,\nCSV, or Excel formats. Authenticated extraction is supported for data behind\nlogin screens.\n\nAuthentication is performed by passing your API key as the `_apikey` query\nparameter on every request. You can find your API key in the Import.io\ndashboard under User Settings.\n\n\nContact Support:\n Name: Import.io Support",
+      "type": "text/plain"
+    }
+  }
+}

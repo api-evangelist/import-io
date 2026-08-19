@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Import.io Crawlrun ReportRun API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "_apikey",
+      "value": "{{_apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ReportRun",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List report runs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reportruns/",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              },
+              {
+                "name": "_perpage",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return per page."
+              },
+              {
+                "name": "_page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return (default 1)."
+              },
+              {
+                "name": "_sort",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort by, e.g. `meta_created_at`."
+              },
+              {
+                "name": "_sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction."
+              }
+            ]
+          },
+          "docs": "List all report runs across reports with optional filters."
+        },
+        {
+          "info": {
+            "name": "Get report run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reportruns/:reportRunId",
+            "params": [
+              {
+                "name": "reportRunId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report run."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Retrieve information about a specific report run."
+        },
+        {
+          "info": {
+            "name": "Get report run results file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/reportruns/:reportRunId/:fileType",
+            "params": [
+              {
+                "name": "reportRunId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the report run."
+              },
+              {
+                "name": "fileType",
+                "value": "",
+                "type": "path",
+                "description": "The file type to download."
+              },
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Download the result file for a report run. JSON output is only available for Change reports."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

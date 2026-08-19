@@ -1,0 +1,690 @@
+{
+  "item": [
+    {
+      "id": "6e8f76d1-0a3c-4432-9a72-edd73f0ca9fe",
+      "name": "ReportRun",
+      "description": {
+        "content": "Retrieve report run executions and their result files.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81ad8807-92a8-477f-8d28-993096e3cc1d",
+          "name": "List report runs",
+          "request": {
+            "name": "List report runs",
+            "description": {
+              "content": "List all report runs across reports with optional filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reportruns",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "_perpage",
+                  "value": "<integer>",
+                  "description": "Number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "_page",
+                  "value": "1",
+                  "description": "Page number to return (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sort",
+                  "value": "<string>",
+                  "description": "Field to sort by, e.g. `meta_created_at`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sortDirection",
+                  "value": "DESC",
+                  "description": "Sort direction."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e158ae1-813f-4486-ad78-906aa3d5d8fc",
+              "name": "Array of report runs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"guid\": \"cc5d0acd-b11b-a847-4906-37161e5e4bf2\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"reportId\": \"c8d46810-2e6c-55c8-a6b2-f5bf91f41e12\",\n    \"configId\": \"d1a83936-626d-46f1-24d4-7d5e83d60640\",\n    \"extractorId\": \"e38058a5-3bf0-dd98-ff55-de5a07feb60b\",\n    \"inputs\": {\n      \"key_0\": true,\n      \"key_1\": \"string\"\n    },\n    \"csv\": \"string\",\n    \"json\": \"string\",\n    \"log\": \"string\",\n    \"pdf\": \"string\",\n    \"xlsx\": \"string\",\n    \"summary\": {\n      \"key_0\": 1441,\n      \"key_1\": 7703.674776235251\n    },\n    \"errorMessage\": \"string\",\n    \"archived\": true,\n    \"_meta\": {\n      \"createdAt\": \"2018-07-10T23:31:52.710Z\",\n      \"modifiedAt\": \"2019-11-06T17:31:12.078Z\",\n      \"ownerId\": \"3efe6d11-7d93-880f-73ed-390674be456f\",\n      \"creatorId\": \"c11fabc8-9f30-1da6-2f1f-57870a87c138\",\n      \"editorId\": \"683a6e43-8584-8f81-9fa3-a2c3d9c9bb29\"\n    }\n  },\n  {\n    \"guid\": \"37f575e1-643f-fd6b-99b4-95ee95b38649\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"reportId\": \"bd594e4c-eddf-5158-06c6-fea7dec734f4\",\n    \"configId\": \"1257c457-9b27-dd93-fce0-3bd7057dc858\",\n    \"extractorId\": \"81f2130b-5864-7abd-7a07-7d6bd1eeb7ea\",\n    \"inputs\": {\n      \"key_0\": \"string\",\n      \"key_1\": 5777\n    },\n    \"csv\": \"string\",\n    \"json\": \"string\",\n    \"log\": \"string\",\n    \"pdf\": \"string\",\n    \"xlsx\": \"string\",\n    \"summary\": {\n      \"key_0\": 8151,\n      \"key_1\": false\n    },\n    \"errorMessage\": \"string\",\n    \"archived\": false,\n    \"_meta\": {\n      \"createdAt\": \"1988-03-28T04:07:27.781Z\",\n      \"modifiedAt\": \"2026-06-28T14:13:25.360Z\",\n      \"ownerId\": \"9e4f8625-7b30-0adf-3aea-8fd7bca68a9d\",\n      \"creatorId\": \"af00dc25-a9ef-5d92-8be1-6805fe62bbbf\",\n      \"editorId\": \"4aa3a3a4-fa39-ba83-c30c-b4620e377f50\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bfb8c54e-66e6-419f-a7dd-c80c4d0d2bfe",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1960,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87cae31c-82c4-4bc3-8008-7524239533e5",
+          "name": "Get report run",
+          "request": {
+            "name": "Get report run",
+            "description": {
+              "content": "Retrieve information about a specific report run.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reportruns",
+                ":reportRunId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "reportRunId",
+                  "description": "(Required) Unique identifier of the report run."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e38e265-920f-46c6-b5f1-2c455434b3fa",
+              "name": "Report run details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ":reportRunId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportRunId",
+                      "description": "(Required) Unique identifier of the report run."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"52bf86b7-8986-70d1-c5d6-a4e4c82bb859\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"status\": \"string\",\n  \"reportId\": \"2952bd60-2727-7b34-b2b0-e552eba1f1bc\",\n  \"configId\": \"6492ff20-34cf-5dc2-8623-794217f89458\",\n  \"extractorId\": \"e305b795-a3da-c355-6b80-f71189028944\",\n  \"inputs\": {\n    \"key_0\": 388.0415610221333,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"csv\": \"string\",\n  \"json\": \"string\",\n  \"log\": \"string\",\n  \"pdf\": \"string\",\n  \"xlsx\": \"string\",\n  \"summary\": {\n    \"key_0\": false,\n    \"key_1\": 7855.541130989031,\n    \"key_2\": 2032\n  },\n  \"errorMessage\": \"string\",\n  \"archived\": false,\n  \"_meta\": {\n    \"createdAt\": \"1953-04-19T14:27:05.805Z\",\n    \"modifiedAt\": \"2003-05-17T09:42:53.508Z\",\n    \"ownerId\": \"71386cdb-0b22-d105-076e-3f8024d76bd8\",\n    \"creatorId\": \"ee6ad4f9-18f9-fdb3-238a-ba6604c07021\",\n    \"editorId\": \"071b08e1-86fc-8cd2-d495-4d0c3d44a2a9\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ed975c4-b56d-4daa-b625-0f3d6d939a54",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ":reportRunId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportRunId",
+                      "description": "(Required) Unique identifier of the report run."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1960,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0aa8ffe9-9c54-4104-8192-97d5f7b9aa17",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ":reportRunId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportRunId",
+                      "description": "(Required) Unique identifier of the report run."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1960,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a40bbc18-6ebf-42ad-9255-12dff1c503fe",
+          "name": "Get report run results file",
+          "request": {
+            "name": "Get report run results file",
+            "description": {
+              "content": "Download the result file for a report run. JSON output is only available for Change reports.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reportruns",
+                ":reportRunId",
+                ":fileType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "reportRunId",
+                  "description": "(Required) Unique identifier of the report run."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileType",
+                  "description": "(Required) The file type to download."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8dabe9ab-3de8-4509-9aac-88a7eb4b762c",
+              "name": "Result file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ":reportRunId",
+                    ":fileType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportRunId",
+                      "description": "(Required) Unique identifier of the report run."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileType",
+                      "description": "(Required) The file type to download."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3202c54b-124e-483c-9278-e2f126cffab4",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ":reportRunId",
+                    ":fileType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportRunId",
+                      "description": "(Required) Unique identifier of the report run."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileType",
+                      "description": "(Required) The file type to download."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1960,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32a6e93b-3749-421a-8b0c-32523e1946ef",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reportruns",
+                    ":reportRunId",
+                    ":fileType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "reportRunId",
+                      "description": "(Required) Unique identifier of the report run."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileType",
+                      "description": "(Required) The file type to download."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1960,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.import.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "_apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a2cd5ed6-3f41-496b-b2ec-aae23befd9d0",
+    "name": "Import.io Crawlrun ReportRun API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Import.io API (v2.0) provides programmatic access to create, manage, and run\nweb data extractors, retrieve crawl run results, and manage reports. Everything\navailable in the Import.io UI can be accomplished via the API, including\nscheduling extractions, managing data pipelines, and exporting data in JSON,\nCSV, or Excel formats. Authenticated extraction is supported for data behind\nlogin screens.\n\nAuthentication is performed by passing your API key as the `_apikey` query\nparameter on every request. You can find your API key in the Import.io\ndashboard under User Settings.\n\n\nContact Support:\n Name: Import.io Support",
+      "type": "text/plain"
+    }
+  }
+}

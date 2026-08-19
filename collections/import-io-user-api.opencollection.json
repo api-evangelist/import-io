@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Import.io Crawlrun User API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "_apikey",
+      "value": "{{_apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/users/current",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Get information on the currently authenticated user."
+        },
+        {
+          "info": {
+            "name": "Get current user subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.import.io/users/current/subscription",
+            "params": [
+              {
+                "name": "_apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your Import.io API key."
+              }
+            ]
+          },
+          "docs": "Get subscription information for the current user including plan, usage, and billing details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

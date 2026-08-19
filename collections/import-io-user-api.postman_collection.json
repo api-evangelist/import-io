@@ -1,0 +1,318 @@
+{
+  "item": [
+    {
+      "id": "0983d526-b089-4ffd-9412-1c538538e0a1",
+      "name": "User",
+      "description": {
+        "content": "Information about the authenticated user and their subscription.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e6182133-885d-4f38-8d3b-85865bb6aeda",
+          "name": "Get current user",
+          "request": {
+            "name": "Get current user",
+            "description": {
+              "content": "Get information on the currently authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "current"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "768e96f9-8d98-410d-bc6e-1b71ffc5bafb",
+              "name": "User information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "current"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"fe570ae8-4f8f-cd3e-a47d-843ec59d3649\",\n  \"username\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"email\": \"6CUcx@eQFuELAraUhwfKX.jcvj\",\n  \"company\": \"string\",\n  \"roles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"passwordSetAt\": \"1993-02-28T16:53:05.915Z\",\n  \"lastLoginDateTime\": \"1952-02-22T09:26:18.119Z\",\n  \"loginAttemptsLeft\": 1718,\n  \"archived\": true,\n  \"_meta\": {\n    \"createdAt\": \"1977-08-29T02:48:15.479Z\",\n    \"modifiedAt\": \"2014-08-21T01:14:06.326Z\",\n    \"ownerId\": \"b3502d34-6637-db81-c6d0-9dd1a8fe273e\",\n    \"creatorId\": \"84ea62dc-ca48-5509-2bea-253267a0c44a\",\n    \"editorId\": \"a16d0bf5-edce-9088-9a5d-7df030800c5e\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "daed7697-854c-4ede-bfa3-afe28e0a79dd",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "current"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8937,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49373053-5f73-4eb2-94cc-809b255d59ec",
+          "name": "Get current user subscription",
+          "request": {
+            "name": "Get current user subscription",
+            "description": {
+              "content": "Get subscription information for the current user including plan, usage, and billing details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "current",
+                "subscription"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5daeefb0-bf40-4079-87d4-195734ecffb8",
+              "name": "Subscription information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "current",
+                    "subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userId\": \"ec3369fd-3c94-b639-5f8f-b13fe27768a4\",\n  \"planCode\": \"string\",\n  \"currentUsage\": 8805,\n  \"maxUsage\": 7500,\n  \"expiryDate\": \"1996-01-04T07:05:25.542Z\",\n  \"nextBillingDate\": \"1999-06-12T20:44:31.390Z\",\n  \"autoRenew\": true,\n  \"trial\": true,\n  \"custom\": false,\n  \"features\": [\n    \"string\",\n    \"string\"\n  ],\n  \"overage\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d38b807-cfa5-4f23-b597-958d59a3a313",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "current",
+                    "subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8937,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.import.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "_apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "54d43f98-547c-4108-84c0-5b3397613030",
+    "name": "Import.io Crawlrun User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Import.io API (v2.0) provides programmatic access to create, manage, and run\nweb data extractors, retrieve crawl run results, and manage reports. Everything\navailable in the Import.io UI can be accomplished via the API, including\nscheduling extractions, managing data pipelines, and exporting data in JSON,\nCSV, or Excel formats. Authenticated extraction is supported for data behind\nlogin screens.\n\nAuthentication is performed by passing your API key as the `_apikey` query\nparameter on every request. You can find your API key in the Import.io\ndashboard under User Settings.\n\n\nContact Support:\n Name: Import.io Support",
+      "type": "text/plain"
+    }
+  }
+}

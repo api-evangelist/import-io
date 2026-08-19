@@ -1,0 +1,690 @@
+{
+  "item": [
+    {
+      "id": "a32fb1a9-3463-49e8-a84a-ceb2adfb8c02",
+      "name": "Crawlrun",
+      "description": {
+        "content": "Retrieve crawl run executions and their result files.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "324da734-77c0-4195-ac24-1fd3deb0465e",
+          "name": "List crawl runs",
+          "request": {
+            "name": "List crawl runs",
+            "description": {
+              "content": "List recent crawl runs with optional filters and pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crawlruns",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "_perpage",
+                  "value": "<integer>",
+                  "description": "Number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "_page",
+                  "value": "1",
+                  "description": "Page number to return (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sort",
+                  "value": "<string>",
+                  "description": "Field to sort by, e.g. `meta_created_at`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sortDirection",
+                  "value": "DESC",
+                  "description": "Sort direction."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fcf7843-1b34-4d69-9416-a07ee32ad15c",
+              "name": "Array of crawl runs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"guid\": \"2fc2ce4b-e9b9-dcd3-ecb8-8a0192ab11aa\",\n    \"extractorId\": \"44411b4b-d68a-3ff5-1692-5edb547fb22e\",\n    \"state\": \"PENDING\",\n    \"startedAt\": \"1965-07-24T22:08:15.754Z\",\n    \"stoppedAt\": \"2003-04-30T22:59:56.975Z\",\n    \"totalUrlCount\": 6938,\n    \"successUrlCount\": 869,\n    \"failedUrlCount\": 7387,\n    \"rowCount\": 133,\n    \"screenCaptureCount\": 1876,\n    \"htmlExtractionCount\": 4953,\n    \"files\": {\n      \"key_0\": 9156,\n      \"key_1\": 2993.708513098127\n    },\n    \"webhooks\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": 5697,\n        \"key_1\": 2926\n      }\n    ],\n    \"_meta\": {\n      \"createdAt\": \"1967-04-06T11:58:04.438Z\",\n      \"modifiedAt\": \"1970-07-26T09:42:39.928Z\",\n      \"ownerId\": \"e80b7bb8-0ebe-eaaa-5c15-150395b0a955\",\n      \"creatorId\": \"f061fc93-bf50-939e-5af7-d95fe594e78e\",\n      \"editorId\": \"23df8681-e709-82c2-d2a1-6bc8a0f4b22c\"\n    }\n  },\n  {\n    \"guid\": \"de298187-634b-3705-0947-ee155765ddf8\",\n    \"extractorId\": \"5bc6edb2-9b49-028e-a9f9-1215e9983eba\",\n    \"state\": \"PENDING\",\n    \"startedAt\": \"1966-08-12T06:27:02.243Z\",\n    \"stoppedAt\": \"2018-05-04T22:01:55.201Z\",\n    \"totalUrlCount\": 754,\n    \"successUrlCount\": 1594,\n    \"failedUrlCount\": 8267,\n    \"rowCount\": 1770,\n    \"screenCaptureCount\": 8421,\n    \"htmlExtractionCount\": 4295,\n    \"files\": {\n      \"key_0\": false\n    },\n    \"webhooks\": [\n      {\n        \"key_0\": 9139,\n        \"key_1\": 3495,\n        \"key_2\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": false\n      }\n    ],\n    \"_meta\": {\n      \"createdAt\": \"1997-04-25T17:32:48.630Z\",\n      \"modifiedAt\": \"1973-08-30T06:22:04.422Z\",\n      \"ownerId\": \"e8e1e582-da77-bc65-8fff-33074c014ab0\",\n      \"creatorId\": \"fe8a7fb0-09a4-056c-ebf0-138588aa4388\",\n      \"editorId\": \"d8dd1d0b-9015-01c6-44c1-c0b9c13e5807\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b2feee3-c75e-4c71-875c-c7ac581ecf42",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 784,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "354d7c70-e46f-4c4e-bd43-ff81480b0291",
+          "name": "Get crawl run",
+          "request": {
+            "name": "Get crawl run",
+            "description": {
+              "content": "Retrieve information about a specific crawl run.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crawlruns",
+                ":crawlrunId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "crawlrunId",
+                  "description": "(Required) Unique identifier of the crawl run."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e741645-f8b9-4da9-b14d-3b6caae9bb2f",
+              "name": "Crawl run details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ":crawlrunId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "crawlrunId",
+                      "description": "(Required) Unique identifier of the crawl run."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"e93531df-5827-3484-3c08-fe36bee3d75e\",\n  \"extractorId\": \"4fb00024-b86f-3303-ea5a-5d2932729f21\",\n  \"state\": \"CANCELLED\",\n  \"startedAt\": \"1946-11-18T03:49:55.296Z\",\n  \"stoppedAt\": \"1980-03-30T10:57:08.023Z\",\n  \"totalUrlCount\": 9195,\n  \"successUrlCount\": 8689,\n  \"failedUrlCount\": 9735,\n  \"rowCount\": 961,\n  \"screenCaptureCount\": 4593,\n  \"htmlExtractionCount\": 467,\n  \"files\": {\n    \"key_0\": 8995.098776247507,\n    \"key_1\": 3683.2738874053416,\n    \"key_2\": 4294.450252749145\n  },\n  \"webhooks\": [\n    {\n      \"key_0\": 3843.1874508455667\n    },\n    {\n      \"key_0\": 7224,\n      \"key_1\": \"string\"\n    }\n  ],\n  \"_meta\": {\n    \"createdAt\": \"1967-10-17T22:20:50.090Z\",\n    \"modifiedAt\": \"1961-06-28T03:48:01.358Z\",\n    \"ownerId\": \"d05ac8ba-cf93-f7f1-3567-d4e8107709be\",\n    \"creatorId\": \"733c9cbb-08d1-5206-66ca-f5e7f92fe0b9\",\n    \"editorId\": \"004a1050-d92d-e8ab-0f87-846873f6dd8c\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d944a4f1-6553-4766-9196-7ff31b89e2be",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ":crawlrunId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "crawlrunId",
+                      "description": "(Required) Unique identifier of the crawl run."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 784,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c27de4c-cc75-4d4a-a369-91ed5d45509c",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ":crawlrunId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "crawlrunId",
+                      "description": "(Required) Unique identifier of the crawl run."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 784,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61ea2f3b-9096-4fe9-8cbf-82b3189f08ad",
+          "name": "Get crawl run results file",
+          "request": {
+            "name": "Get crawl run results file",
+            "description": {
+              "content": "Download the result file for a crawl run in the requested format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crawlruns",
+                ":crawlrunId",
+                ":fileType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "crawlrunId",
+                  "description": "(Required) Unique identifier of the crawl run."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileType",
+                  "description": "(Required) The file type to download."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63d31452-8980-4ace-9725-61c02075edea",
+              "name": "Result file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ":crawlrunId",
+                    ":fileType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "crawlrunId",
+                      "description": "(Required) Unique identifier of the crawl run."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileType",
+                      "description": "(Required) The file type to download."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2749c6a-a120-4379-9782-82d062b211cb",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ":crawlrunId",
+                    ":fileType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "crawlrunId",
+                      "description": "(Required) Unique identifier of the crawl run."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileType",
+                      "description": "(Required) The file type to download."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 784,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f5e0c67-6747-4658-9cc7-ba19e2f15c31",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crawlruns",
+                    ":crawlrunId",
+                    ":fileType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "crawlrunId",
+                      "description": "(Required) Unique identifier of the crawl run."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileType",
+                      "description": "(Required) The file type to download."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 784,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.import.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "_apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "21d00abf-096e-401b-9994-e49252950415",
+    "name": "Import.io Crawlrun API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Import.io API (v2.0) provides programmatic access to create, manage, and run\nweb data extractors, retrieve crawl run results, and manage reports. Everything\navailable in the Import.io UI can be accomplished via the API, including\nscheduling extractions, managing data pipelines, and exporting data in JSON,\nCSV, or Excel formats. Authenticated extraction is supported for data behind\nlogin screens.\n\nAuthentication is performed by passing your API key as the `_apikey` query\nparameter on every request. You can find your API key in the Import.io\ndashboard under User Settings.\n\n\nContact Support:\n Name: Import.io Support",
+      "type": "text/plain"
+    }
+  }
+}

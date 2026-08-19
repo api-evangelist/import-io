@@ -1,0 +1,2394 @@
+{
+  "item": [
+    {
+      "id": "05a2f2cc-7dcb-479c-bb82-7c49a5cf2c0d",
+      "name": "Extractor",
+      "description": {
+        "content": "Create, configure, run, and manage web data extractors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "257e9159-7ae9-4e3f-b5ac-9150f129de0f",
+          "name": "List extractors",
+          "request": {
+            "name": "List extractors",
+            "description": {
+              "content": "Returns a paginated list of extractors owned by the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "_perpage",
+                  "value": "<integer>",
+                  "description": "Number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "_page",
+                  "value": "1",
+                  "description": "Page number to return (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sort",
+                  "value": "<string>",
+                  "description": "Field to sort by, e.g. `meta_created_at`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_sortDirection",
+                  "value": "DESC",
+                  "description": "Sort direction."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7fc205b1-d568-4eaa-ad1c-9de4b5de60a3",
+              "name": "Array of extractors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"guid\": \"7beb5e3f-7d9c-3716-28f2-3210f9237a2d\",\n    \"name\": \"string\",\n    \"fields\": [\n      {\n        \"key_0\": \"string\",\n        \"key_1\": 636.2447797071669,\n        \"key_2\": 928.2774035045549,\n        \"key_3\": \"string\"\n      },\n      {\n        \"key_0\": 8628.454975571185,\n        \"key_1\": \"string\",\n        \"key_2\": 1909,\n        \"key_3\": true\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"archived\": false,\n    \"proxy\": {\n      \"key_0\": true\n    },\n    \"webhooks\": [\n      {\n        \"key_0\": false\n      },\n      {\n        \"key_0\": 624\n      }\n    ],\n    \"chainingConfig\": {\n      \"key_0\": false\n    },\n    \"credentialsId\": \"ef437a91-bf04-21f9-8443-554de65e9fc5\",\n    \"_meta\": {\n      \"createdAt\": \"1957-12-06T08:58:53.177Z\",\n      \"modifiedAt\": \"1951-10-18T07:48:35.702Z\",\n      \"ownerId\": \"a9ce363d-144f-f91f-c57d-cd7e634ce0dc\",\n      \"creatorId\": \"59a897d3-0e00-324d-9a7a-b99c2cedf0ef\",\n      \"editorId\": \"d278fb75-db8d-0449-3f5c-cee7f83677b3\"\n    }\n  },\n  {\n    \"guid\": \"75cd7a63-8577-28ca-445b-ee5c48ff0f84\",\n    \"name\": \"string\",\n    \"fields\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": false\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"archived\": true,\n    \"proxy\": {\n      \"key_0\": false,\n      \"key_1\": 147.72578520927615,\n      \"key_2\": 5281\n    },\n    \"webhooks\": [\n      {\n        \"key_0\": false,\n        \"key_1\": 6588.419870560211\n      },\n      {\n        \"key_0\": 6659.039346180382\n      }\n    ],\n    \"chainingConfig\": {\n      \"key_0\": 8323,\n      \"key_1\": 6439.768761680327,\n      \"key_2\": true\n    },\n    \"credentialsId\": \"1d30aea4-0092-2fd3-4250-6acf58c9286e\",\n    \"_meta\": {\n      \"createdAt\": \"2007-09-24T14:04:37.287Z\",\n      \"modifiedAt\": \"1991-03-19T11:18:52.983Z\",\n      \"ownerId\": \"507d3724-7b94-5978-e29d-c27ab9919158\",\n      \"creatorId\": \"b479950a-e998-7af7-d1bc-3f122d51aa76\",\n      \"editorId\": \"49b493fa-cf68-052c-587f-63775f07f416\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5116eea7-86b3-4618-b1f9-964e593e7611",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_perpage",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "_page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "_sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_sortDirection",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d884171a-5f8e-422d-8334-09065e22a504",
+          "name": "Get extractor",
+          "request": {
+            "name": "Get extractor",
+            "description": {
+              "content": "Get information about a specific extractor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d5e1b89-05dd-4c3c-946a-d6576c4c6537",
+              "name": "Extractor details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"b4f09cb3-aa10-0c73-f05b-9f256fa95087\",\n  \"name\": \"string\",\n  \"fields\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"archived\": false,\n  \"proxy\": {\n    \"key_0\": 2993,\n    \"key_1\": true\n  },\n  \"webhooks\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 8757.081659704616\n    }\n  ],\n  \"chainingConfig\": {\n    \"key_0\": false,\n    \"key_1\": true,\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"credentialsId\": \"1c6f77b6-1e2d-2d95-8a4d-b07cf63d06eb\",\n  \"_meta\": {\n    \"createdAt\": \"2025-08-25T09:29:39.841Z\",\n    \"modifiedAt\": \"2007-01-26T20:23:53.105Z\",\n    \"ownerId\": \"a52c8d04-d353-ecd4-970d-ee4fbfa91314\",\n    \"creatorId\": \"cc66c823-46d3-9fcf-2ec1-90339772ff84\",\n    \"editorId\": \"d31c1b28-a000-504c-148a-41fcbc3b1f56\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab931d92-98f9-4681-8f43-e9219253f1bf",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45dcdbc1-3632-452f-8350-edb7b5fd0324",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae713c24-81f2-4dc0-a56c-dea766b6591b",
+          "name": "Archive extractor",
+          "request": {
+            "name": "Archive extractor",
+            "description": {
+              "content": "Archive (delete) an extractor. Data is retained in the database but the extractor is hidden from the UI and cannot be run.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "469d8e94-9574-46aa-baa1-25351d6c09f2",
+              "name": "Archived extractor",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"b4f09cb3-aa10-0c73-f05b-9f256fa95087\",\n  \"name\": \"string\",\n  \"fields\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"archived\": false,\n  \"proxy\": {\n    \"key_0\": 2993,\n    \"key_1\": true\n  },\n  \"webhooks\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 8757.081659704616\n    }\n  ],\n  \"chainingConfig\": {\n    \"key_0\": false,\n    \"key_1\": true,\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"credentialsId\": \"1c6f77b6-1e2d-2d95-8a4d-b07cf63d06eb\",\n  \"_meta\": {\n    \"createdAt\": \"2025-08-25T09:29:39.841Z\",\n    \"modifiedAt\": \"2007-01-26T20:23:53.105Z\",\n    \"ownerId\": \"a52c8d04-d353-ecd4-970d-ee4fbfa91314\",\n    \"creatorId\": \"cc66c823-46d3-9fcf-2ec1-90339772ff84\",\n    \"editorId\": \"d31c1b28-a000-504c-148a-41fcbc3b1f56\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fca00824-f800-4360-b325-49263ce30cef",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f30a694a-18f2-4c25-a994-8d2edd9d7316",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ed3102f-eda0-4f6e-8417-468012b81b1f",
+          "name": "Get extractor inputs",
+          "request": {
+            "name": "Get extractor inputs",
+            "description": {
+              "content": "Retrieve the current inputs configured for an extractor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId",
+                "inputs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ac1d14b-60c1-4500-8c9f-62a338e6f816",
+              "name": "Extractor inputs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7459e72-7a4e-4621-93bd-0a03ac825a6f",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87fe1009-d309-497c-9c79-12458a14f1cf",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "769f2fc7-dc53-4830-a162-3076b786c97a",
+          "name": "Update extractor inputs",
+          "request": {
+            "name": "Update extractor inputs",
+            "description": {
+              "content": "Update the inputs (URLs) configured for an extractor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId",
+                "inputs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"_url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e98424bf-ee90-484f-ad41-47dd4f32cea1",
+              "name": "Inputs updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a0f989aa-b5c4-487e-8380-c69d3132915c",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01494c6b-a831-4764-9a04-140044de2a93",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cbcaa611-e01e-4bb9-8054-6618d73cc450",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "inputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c07d9432-58d4-4cae-b850-d07fb24f1a33",
+          "name": "Start extractor",
+          "request": {
+            "name": "Start extractor",
+            "description": {
+              "content": "Trigger an extractor to run.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7af6f5f9-6fcb-43f1-878c-1a62d777cfce",
+              "name": "Extractor started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "225a78cb-9119-4326-a6bd-6a706d39cd17",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71f91d08-cc32-48e6-925f-a3687bf876f1",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03fa5ce6-0ee7-4900-b83a-2fe10c7b151a",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1237f94-d0b8-4436-b544-de861aa52021",
+          "name": "Stop extractor",
+          "request": {
+            "name": "Stop extractor",
+            "description": {
+              "content": "Halt a running extractor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c25d483b-7d4c-4217-8ccb-878d864fd52b",
+              "name": "Extractor stopped",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e42972d4-237b-4444-9859-cc7b78b89242",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e612a46c-4cad-4bbe-970a-f2dea7a632d1",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d51b1c72-aac4-4773-be24-7d054bf04f8d",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c6641cb-80e2-46ca-a8d5-af62cd040dae",
+          "name": "Duplicate extractor",
+          "request": {
+            "name": "Duplicate extractor",
+            "description": {
+              "content": "Create a copy of an existing extractor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId",
+                "duplicate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6148721-7051-4b82-943f-6e7fd7ed7972",
+              "name": "Duplicated extractor",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guid\": \"b4f09cb3-aa10-0c73-f05b-9f256fa95087\",\n  \"name\": \"string\",\n  \"fields\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": false\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"archived\": false,\n  \"proxy\": {\n    \"key_0\": 2993,\n    \"key_1\": true\n  },\n  \"webhooks\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 8757.081659704616\n    }\n  ],\n  \"chainingConfig\": {\n    \"key_0\": false,\n    \"key_1\": true,\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"credentialsId\": \"1c6f77b6-1e2d-2d95-8a4d-b07cf63d06eb\",\n  \"_meta\": {\n    \"createdAt\": \"2025-08-25T09:29:39.841Z\",\n    \"modifiedAt\": \"2007-01-26T20:23:53.105Z\",\n    \"ownerId\": \"a52c8d04-d353-ecd4-970d-ee4fbfa91314\",\n    \"creatorId\": \"cc66c823-46d3-9fcf-2ec1-90339772ff84\",\n    \"editorId\": \"d31c1b28-a000-504c-148a-41fcbc3b1f56\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac88a89a-390f-4cf4-b403-0bc6bef63378",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ba863ed-f5b7-44c2-aa65-d12095771d52",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12524edd-6862-4e98-ab33-c7622fe45163",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4a80520-5f34-4e77-bb4e-3a9468b7ea25",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1efb62f8-8b50-4c99-91b6-ba9a6b236ba4",
+          "name": "Update extractor credentials",
+          "request": {
+            "name": "Update extractor credentials",
+            "description": {
+              "content": "Update the authentication credentials used by an extractor for sites behind login.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "extractors",
+                ":extractorId",
+                "credentials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your Import.io API key."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "extractorId",
+                  "description": "(Required) Unique identifier of the extractor."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e7c2657-543c-42c3-b763-3257df568882",
+              "name": "Credentials updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e72eeaef-613d-4ad0-8b21-014b80bdca8d",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "447d6e85-ec58-472b-ab11-ecf487ae8a69",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4573bfb5-05f6-4be3-9b67-71417a71f0b7",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd12f98e-8e0f-4f4e-b4b5-0b173f882a7a",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extractors",
+                    ":extractorId",
+                    "credentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "extractorId",
+                      "description": "(Required) Unique identifier of the extractor."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7817,\n  \"message\": \"string\",\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.import.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "_apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8eaba95e-e827-491d-98ac-277c4d6c8f55",
+    "name": "Import.io Crawlrun Extractor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Import.io API (v2.0) provides programmatic access to create, manage, and run\nweb data extractors, retrieve crawl run results, and manage reports. Everything\navailable in the Import.io UI can be accomplished via the API, including\nscheduling extractions, managing data pipelines, and exporting data in JSON,\nCSV, or Excel formats. Authenticated extraction is supported for data behind\nlogin screens.\n\nAuthentication is performed by passing your API key as the `_apikey` query\nparameter on every request. You can find your API key in the Import.io\ndashboard under User Settings.\n\n\nContact Support:\n Name: Import.io Support",
+      "type": "text/plain"
+    }
+  }
+}
