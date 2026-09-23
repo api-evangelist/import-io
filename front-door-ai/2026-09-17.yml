@@ -1,0 +1,36 @@
+# Front Door AI Index — import-io — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: import-io
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.import.io
+  final_host: www.import.io
+  ownership: own
+  owner: import-io
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 60
+  host_score: 60
+  density: 13.64
+  words: 4400
+  tiers:
+    agentic: 12
+    core: 41
+    model: 7
+  ambiguous: 39
+  top_terms:
+    intelligence: 34
+    AI: 30
+    MCP: 7
+    machine learning: 4
+    ChatGPT: 3
+    agent: 3
+    deep learning: 3
+    Claude: 2
+    AI agent: 1
+    AI assistant: 1
+    GPT: 1
+    ML: 1

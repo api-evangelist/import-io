@@ -1,26 +1,9 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Import.io Crawlrun User API
+  title: Import.io User API
   description: 'The Import.io API (v2.0) provides programmatic access to create, manage, and run
 
-    web data extractors, retrieve crawl run results, and manage reports. Everything
-
-    available in the Import.io UI can be accomplished via the API, including
-
-    scheduling extractions, managing data pipelines, and exporting data in JSON,
-
-    CSV, or Excel formats. Authenticated extraction is supported for data behind
-
-    login screens.
-
-
-    Authentication is performed by passing your API key as the `_apikey` query
-
-    parameter on every request. You can find your API key in the Import.io
-
-    dashboard under User Settings.
-
-    '
+    web data extractors, retrieve crawl run results, and manage reports.'
   version: '2.0'
   contact:
     name: Import.io Support
@@ -75,19 +58,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
-          type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
     Meta:
       type: object
       description: Common metadata included on most resources.
@@ -107,6 +77,50 @@ components:
         editorId:
           type: string
           format: uuid
+    Subscription:
+      type: object
+      properties:
+        userId:
+          type: string
+          format: uuid
+        planCode:
+          type: string
+        currentUsage:
+          type: integer
+        maxUsage:
+          type: integer
+        expiryDate:
+          type: string
+          format: date-time
+        nextBillingDate:
+          type: string
+          format: date-time
+        autoRenew:
+          type: boolean
+        trial:
+          type: boolean
+        custom:
+          type: boolean
+        features:
+          type: array
+          items:
+            type: string
+        overage:
+          type: object
+          additionalProperties: true
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
     User:
       type: object
       properties:
@@ -140,37 +154,13 @@ components:
           type: boolean
         _meta:
           $ref: '#/components/schemas/Meta'
-    Subscription:
-      type: object
-      properties:
-        userId:
-          type: string
-          format: uuid
-        planCode:
-          type: string
-        currentUsage:
-          type: integer
-        maxUsage:
-          type: integer
-        expiryDate:
-          type: string
-          format: date-time
-        nextBillingDate:
-          type: string
-          format: date-time
-        autoRenew:
-          type: boolean
-        trial:
-          type: boolean
-        custom:
-          type: boolean
-        features:
-          type: array
-          items:
-            type: string
-        overage:
-          type: object
-          additionalProperties: true
+  responses:
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
     ApiKey:
       name: _apikey
@@ -179,13 +169,6 @@ components:
       description: Your Import.io API key.
       schema:
         type: string
-  responses:
-    Unauthorized:
-      description: Authentication failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

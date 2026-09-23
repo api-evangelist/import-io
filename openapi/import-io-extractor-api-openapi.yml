@@ -1,26 +1,9 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Import.io Crawlrun Extractor API
+  title: Import.io Extractor API
   description: 'The Import.io API (v2.0) provides programmatic access to create, manage, and run
 
-    web data extractors, retrieve crawl run results, and manage reports. Everything
-
-    available in the Import.io UI can be accomplished via the API, including
-
-    scheduling extractions, managing data pipelines, and exporting data in JSON,
-
-    CSV, or Excel formats. Authenticated extraction is supported for data behind
-
-    login screens.
-
-
-    Authentication is performed by passing your API key as the `_apikey` query
-
-    parameter on every request. You can find your API key in the Import.io
-
-    dashboard under User Settings.
-
-    '
+    web data extractors, retrieve crawl run results, and manage reports.'
   version: '2.0'
   contact:
     name: Import.io Support
@@ -233,6 +216,49 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   schemas:
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
+    Credentials:
+      type: object
+      required:
+      - username
+      - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+          format: password
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
     Extractor:
       type: object
       properties:
@@ -268,76 +294,33 @@ components:
           format: uuid
         _meta:
           $ref: '#/components/schemas/Meta'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
-          type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
-    Meta:
-      type: object
-      description: Common metadata included on most resources.
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-        modifiedAt:
-          type: string
-          format: date-time
-        ownerId:
-          type: string
-          format: uuid
-        creatorId:
-          type: string
-          format: uuid
-        editorId:
-          type: string
-          format: uuid
     ExtractorInputs:
       type: object
       properties:
         _url:
           type: string
           description: One or more URLs to extract data from. Multiple URLs may be newline-separated.
-    Credentials:
-      type: object
-      required:
-      - username
-      - password
-      properties:
-        username:
-          type: string
-        password:
-          type: string
-          format: password
   responses:
-    ServerError:
-      description: Server error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     NotFound:
       description: Resource not found.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     Forbidden:
       description: Forbidden.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication failed.
       content:
         application/json:
           schema:
@@ -361,6 +344,14 @@ components:
       description: Your Import.io API key.
       schema:
         type: string
+    Page:
+      name: _page
+      in: query
+      required: false
+      description: Page number to return (default 1).
+      schema:
+        type: integer
+        default: 1
     Sort:
       name: _sort
       in: query
@@ -383,14 +374,6 @@ components:
       description: Number of items to return per page.
       schema:
         type: integer
-    Page:
-      name: _page
-      in: query
-      required: false
-      description: Page number to return (default 1).
-      schema:
-        type: integer
-        default: 1
   securitySchemes:
     apiKeyAuth:
       type: apiKey
