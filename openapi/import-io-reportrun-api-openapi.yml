@@ -97,6 +97,55 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  parameters:
+    Sort:
+      name: _sort
+      in: query
+      required: false
+      description: Field to sort by, e.g. `meta_created_at`.
+      schema:
+        type: string
+    PerPage:
+      name: _perpage
+      in: query
+      required: false
+      description: Number of items to return per page.
+      schema:
+        type: integer
+    ReportRunId:
+      name: reportRunId
+      in: path
+      required: true
+      description: Unique identifier of the report run.
+      schema:
+        type: string
+        format: uuid
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    Page:
+      name: _page
+      in: query
+      required: false
+      description: Page number to return (default 1).
+      schema:
+        type: integer
+        default: 1
   responses:
     NotFound:
       description: Resource not found.
@@ -111,6 +160,19 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
     ReportRun:
       type: object
       properties:
@@ -173,68 +235,6 @@ components:
         editorId:
           type: string
           format: uuid
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
-          type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
-  parameters:
-    SortDirection:
-      name: _sortDirection
-      in: query
-      required: false
-      description: Sort direction.
-      schema:
-        type: string
-        enum:
-        - ASC
-        - DESC
-        default: DESC
-    ApiKey:
-      name: _apikey
-      in: query
-      required: true
-      description: Your Import.io API key.
-      schema:
-        type: string
-    Page:
-      name: _page
-      in: query
-      required: false
-      description: Page number to return (default 1).
-      schema:
-        type: integer
-        default: 1
-    Sort:
-      name: _sort
-      in: query
-      required: false
-      description: Field to sort by, e.g. `meta_created_at`.
-      schema:
-        type: string
-    ReportRunId:
-      name: reportRunId
-      in: path
-      required: true
-      description: Unique identifier of the report run.
-      schema:
-        type: string
-        format: uuid
-    PerPage:
-      name: _perpage
-      in: query
-      required: false
-      description: Number of items to return per page.
-      schema:
-        type: integer
   securitySchemes:
     apiKeyAuth:
       type: apiKey
