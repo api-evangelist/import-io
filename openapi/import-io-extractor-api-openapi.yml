@@ -215,13 +215,105 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
+  parameters:
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
+    Sort:
+      name: _sort
+      in: query
+      required: false
+      description: Field to sort by, e.g. `meta_created_at`.
+      schema:
+        type: string
+    PerPage:
+      name: _perpage
+      in: query
+      required: false
+      description: Number of items to return per page.
+      schema:
+        type: integer
+    Page:
+      name: _page
+      in: query
+      required: false
+      description: Page number to return (default 1).
+      schema:
+        type: integer
+        default: 1
+    ExtractorId:
+      name: extractorId
+      in: path
+      required: true
+      description: Unique identifier of the extractor.
+      schema:
+        type: string
+        format: uuid
+  responses:
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Forbidden.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    ExtractorInputs:
+    Error:
       type: object
       properties:
-        _url:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
           type: string
-          description: One or more URLs to extract data from. Multiple URLs may be newline-separated.
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
+    Credentials:
+      type: object
+      required:
+      - username
+      - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+          format: password
     Extractor:
       type: object
       properties:
@@ -257,30 +349,12 @@ components:
           format: uuid
         _meta:
           $ref: '#/components/schemas/Meta'
-    Credentials:
-      type: object
-      required:
-      - username
-      - password
-      properties:
-        username:
-          type: string
-        password:
-          type: string
-          format: password
-    Error:
+    ExtractorInputs:
       type: object
       properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
+        _url:
           type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
+          description: One or more URLs to extract data from. Multiple URLs may be newline-separated.
     Meta:
       type: object
       description: Common metadata included on most resources.
@@ -300,80 +374,6 @@ components:
         editorId:
           type: string
           format: uuid
-  parameters:
-    Sort:
-      name: _sort
-      in: query
-      required: false
-      description: Field to sort by, e.g. `meta_created_at`.
-      schema:
-        type: string
-    PerPage:
-      name: _perpage
-      in: query
-      required: false
-      description: Number of items to return per page.
-      schema:
-        type: integer
-    ExtractorId:
-      name: extractorId
-      in: path
-      required: true
-      description: Unique identifier of the extractor.
-      schema:
-        type: string
-        format: uuid
-    ApiKey:
-      name: _apikey
-      in: query
-      required: true
-      description: Your Import.io API key.
-      schema:
-        type: string
-    SortDirection:
-      name: _sortDirection
-      in: query
-      required: false
-      description: Sort direction.
-      schema:
-        type: string
-        enum:
-        - ASC
-        - DESC
-        default: DESC
-    Page:
-      name: _page
-      in: query
-      required: false
-      description: Page number to return (default 1).
-      schema:
-        type: integer
-        default: 1
-  responses:
-    Forbidden:
-      description: Forbidden.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ServerError:
-      description: Server error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

@@ -128,6 +128,24 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   parameters:
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
     Sort:
       name: _sort
       in: query
@@ -142,32 +160,6 @@ components:
       description: Number of items to return per page.
       schema:
         type: integer
-    ReportId:
-      name: reportId
-      in: path
-      required: true
-      description: Unique identifier of the report.
-      schema:
-        type: string
-        format: uuid
-    ApiKey:
-      name: _apikey
-      in: query
-      required: true
-      description: Your Import.io API key.
-      schema:
-        type: string
-    SortDirection:
-      name: _sortDirection
-      in: query
-      required: false
-      description: Sort direction.
-      schema:
-        type: string
-        enum:
-        - ASC
-        - DESC
-        default: DESC
     Page:
       name: _page
       in: query
@@ -176,6 +168,33 @@ components:
       schema:
         type: integer
         default: 1
+    ReportId:
+      name: reportId
+      in: path
+      required: true
+      description: Unique identifier of the report.
+      schema:
+        type: string
+        format: uuid
+  responses:
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     Report:
       type: object
@@ -197,6 +216,19 @@ components:
           type: boolean
         _meta:
           $ref: '#/components/schemas/Meta'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
     ReportRun:
       type: object
       properties:
@@ -240,19 +272,6 @@ components:
           type: boolean
         _meta:
           $ref: '#/components/schemas/Meta'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
-          type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
     Meta:
       type: object
       description: Common metadata included on most resources.
@@ -272,25 +291,6 @@ components:
         editorId:
           type: string
           format: uuid
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ServerError:
-      description: Server error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

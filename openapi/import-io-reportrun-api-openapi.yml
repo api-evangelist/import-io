@@ -98,6 +98,24 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   parameters:
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
     Sort:
       name: _sort
       in: query
@@ -112,32 +130,6 @@ components:
       description: Number of items to return per page.
       schema:
         type: integer
-    ReportRunId:
-      name: reportRunId
-      in: path
-      required: true
-      description: Unique identifier of the report run.
-      schema:
-        type: string
-        format: uuid
-    ApiKey:
-      name: _apikey
-      in: query
-      required: true
-      description: Your Import.io API key.
-      schema:
-        type: string
-    SortDirection:
-      name: _sortDirection
-      in: query
-      required: false
-      description: Sort direction.
-      schema:
-        type: string
-        enum:
-        - ASC
-        - DESC
-        default: DESC
     Page:
       name: _page
       in: query
@@ -146,20 +138,47 @@ components:
       schema:
         type: integer
         default: 1
+    ReportRunId:
+      name: reportRunId
+      in: path
+      required: true
+      description: Unique identifier of the report run.
+      schema:
+        type: string
+        format: uuid
   responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     Unauthorized:
       description: Authentication failed.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
     Error:
       type: object
       properties:
@@ -216,25 +235,6 @@ components:
           type: boolean
         _meta:
           $ref: '#/components/schemas/Meta'
-    Meta:
-      type: object
-      description: Common metadata included on most resources.
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-        modifiedAt:
-          type: string
-          format: date-time
-        ownerId:
-          type: string
-          format: uuid
-        creatorId:
-          type: string
-          format: uuid
-        editorId:
-          type: string
-          format: uuid
   securitySchemes:
     apiKeyAuth:
       type: apiKey

@@ -104,20 +104,17 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   parameters:
-    Sort:
-      name: _sort
+    SortDirection:
+      name: _sortDirection
       in: query
       required: false
-      description: Field to sort by, e.g. `meta_created_at`.
+      description: Sort direction.
       schema:
         type: string
-    PerPage:
-      name: _perpage
-      in: query
-      required: false
-      description: Number of items to return per page.
-      schema:
-        type: integer
+        enum:
+        - ASC
+        - DESC
+        default: DESC
     CrawlrunId:
       name: crawlrunId
       in: path
@@ -133,17 +130,20 @@ components:
       description: Your Import.io API key.
       schema:
         type: string
-    SortDirection:
-      name: _sortDirection
+    Sort:
+      name: _sort
       in: query
       required: false
-      description: Sort direction.
+      description: Field to sort by, e.g. `meta_created_at`.
       schema:
         type: string
-        enum:
-        - ASC
-        - DESC
-        default: DESC
+    PerPage:
+      name: _perpage
+      in: query
+      required: false
+      description: Number of items to return per page.
+      schema:
+        type: integer
     Page:
       name: _page
       in: query
@@ -153,51 +153,19 @@ components:
         type: integer
         default: 1
   responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     Unauthorized:
       description: Authentication failed.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
-          type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
-    Meta:
-      type: object
-      description: Common metadata included on most resources.
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-        modifiedAt:
-          type: string
-          format: date-time
-        ownerId:
-          type: string
-          format: uuid
-        creatorId:
-          type: string
-          format: uuid
-        editorId:
-          type: string
-          format: uuid
     Crawlrun:
       type: object
       properties:
@@ -243,6 +211,38 @@ components:
             additionalProperties: true
         _meta:
           $ref: '#/components/schemas/Meta'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
   securitySchemes:
     apiKeyAuth:
       type: apiKey
