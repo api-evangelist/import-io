@@ -118,6 +118,12 @@ apis:
   - type: Documentation
     url: https://docs.import.io/spec/saas/import-io-api-documentation/
 common:
+  - type: Plans
+    url: plans/import-io-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/import-io-rate-limits.yml
+  - type: FinOps
+    url: finops/import-io-finops.yml
   - type: AgenticAccess
     url: agentic-access/import-io-agentic-access.yml
   - type: DomainSecurity
