@@ -127,75 +127,50 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ServerError:
-      description: Server error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-  parameters:
-    SortDirection:
-      name: _sortDirection
-      in: query
-      required: false
-      description: Sort direction.
-      schema:
-        type: string
-        enum:
-        - ASC
-        - DESC
-        default: DESC
-    Page:
-      name: _page
-      in: query
-      required: false
-      description: Page number to return (default 1).
-      schema:
-        type: integer
-        default: 1
-    ApiKey:
-      name: _apikey
-      in: query
-      required: true
-      description: Your Import.io API key.
-      schema:
-        type: string
-    PerPage:
-      name: _perpage
-      in: query
-      required: false
-      description: Number of items to return per page.
-      schema:
-        type: integer
-    Sort:
-      name: _sort
-      in: query
-      required: false
-      description: Field to sort by, e.g. `meta_created_at`.
-      schema:
-        type: string
-    ReportId:
-      name: reportId
-      in: path
-      required: true
-      description: Unique identifier of the report.
-      schema:
-        type: string
-        format: uuid
   schemas:
+    ReportRun:
+      type: object
+      properties:
+        guid:
+          type: string
+          format: uuid
+        name:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+        reportId:
+          type: string
+          format: uuid
+        configId:
+          type: string
+          format: uuid
+        extractorId:
+          type: string
+          format: uuid
+        inputs:
+          type: object
+          additionalProperties: true
+        csv:
+          type: string
+        json:
+          type: string
+        log:
+          type: string
+        pdf:
+          type: string
+        xlsx:
+          type: string
+        summary:
+          type: object
+          additionalProperties: true
+        errorMessage:
+          type: string
+        archived:
+          type: boolean
+        _meta:
+          $ref: '#/components/schemas/Meta'
     Error:
       type: object
       properties:
@@ -248,49 +223,74 @@ components:
         editorId:
           type: string
           format: uuid
-    ReportRun:
-      type: object
-      properties:
-        guid:
-          type: string
-          format: uuid
-        name:
-          type: string
-        type:
-          type: string
-        status:
-          type: string
-        reportId:
-          type: string
-          format: uuid
-        configId:
-          type: string
-          format: uuid
-        extractorId:
-          type: string
-          format: uuid
-        inputs:
-          type: object
-          additionalProperties: true
-        csv:
-          type: string
-        json:
-          type: string
-        log:
-          type: string
-        pdf:
-          type: string
-        xlsx:
-          type: string
-        summary:
-          type: object
-          additionalProperties: true
-        errorMessage:
-          type: string
-        archived:
-          type: boolean
-        _meta:
-          $ref: '#/components/schemas/Meta'
+  parameters:
+    PerPage:
+      name: _perpage
+      in: query
+      required: false
+      description: Number of items to return per page.
+      schema:
+        type: integer
+    SortDirection:
+      name: _sortDirection
+      in: query
+      required: false
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: DESC
+    Sort:
+      name: _sort
+      in: query
+      required: false
+      description: Field to sort by, e.g. `meta_created_at`.
+      schema:
+        type: string
+    ApiKey:
+      name: _apikey
+      in: query
+      required: true
+      description: Your Import.io API key.
+      schema:
+        type: string
+    ReportId:
+      name: reportId
+      in: path
+      required: true
+      description: Unique identifier of the report.
+      schema:
+        type: string
+        format: uuid
+    Page:
+      name: _page
+      in: query
+      required: false
+      description: Page number to return (default 1).
+      schema:
+        type: integer
+        default: 1
+  responses:
+    Unauthorized:
+      description: Authentication failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

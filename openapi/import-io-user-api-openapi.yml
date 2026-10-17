@@ -58,6 +58,19 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Internal error code.
+        message:
+          type: string
+          description: Human-readable error description.
+        error:
+          type: string
+          description: Deprecated error string.
+          deprecated: true
     User:
       type: object
       properties:
@@ -91,6 +104,25 @@ components:
           type: boolean
         _meta:
           $ref: '#/components/schemas/Meta'
+    Meta:
+      type: object
+      description: Common metadata included on most resources.
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+        ownerId:
+          type: string
+          format: uuid
+        creatorId:
+          type: string
+          format: uuid
+        editorId:
+          type: string
+          format: uuid
     Subscription:
       type: object
       properties:
@@ -122,38 +154,6 @@ components:
         overage:
           type: object
           additionalProperties: true
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Internal error code.
-        message:
-          type: string
-          description: Human-readable error description.
-        error:
-          type: string
-          description: Deprecated error string.
-          deprecated: true
-    Meta:
-      type: object
-      description: Common metadata included on most resources.
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-        modifiedAt:
-          type: string
-          format: date-time
-        ownerId:
-          type: string
-          format: uuid
-        creatorId:
-          type: string
-          format: uuid
-        editorId:
-          type: string
-          format: uuid
   responses:
     Unauthorized:
       description: Authentication failed.
