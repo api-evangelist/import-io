@@ -1,0 +1,205 @@
+openapi: 3.2.0
+info:
+  version: '1.0'
+  description: ''
+  title: Import Io Schedule.import.io API
+servers:
+- url: https://schedule.import.io/
+tags:
+- name: schedule.import.io
+paths:
+  /extractor:
+    post:
+      responses:
+        '200':
+          description: crawl run schedule
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/Schedule'
+        '404':
+          description: Unable to find supplied extractor ID.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+        '403':
+          description: User is not allowed to create schedule for this extractor.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+        '401':
+          description: User doesn't own this extractor, or doesn't have a valid session.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+        '400':
+          description: Validation errors on the request input.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+      security:
+      - api_key: []
+      tags:
+      - schedule.import.io
+      summary: Schedule and extractor to run at a specific time
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduleRequest'
+        description: Request body with the schema defined on the left. Interval is a cron string.
+        required: true
+      operationId: postExtractor
+      x-operation-id-source: derived
+    get:
+      responses:
+        '200':
+          description: array of crawl run schedules
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/Schedule'
+        '404':
+          description: Unable to find supplied extractor ID.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+        '401':
+          description: User doesn't have a valid session.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+      tags:
+      - schedule.import.io
+      summary: Get the list of schedules for all your extractors
+      security:
+      - api_key: []
+      operationId: getExtractor
+      x-operation-id-source: derived
+  /extractor/{extractorId}/:
+    delete:
+      responses:
+        '200':
+          description: Empty object
+        '404':
+          description: Unable to find supplied extractor ID.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+        '403':
+          description: User is not allowed to delete this schedule.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+        '401':
+          description: User doesn't have a valid session.
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/APIError'
+      parameters:
+      - required: true
+        description: the id of the extractor with a schedule
+        in: path
+        name: extractorId
+        schema:
+          type: string
+      security:
+      - api_key: []
+      tags:
+      - schedule.import.io
+      summary: Delete an existing schedule
+      operationId: deleteExtractorByExtractorId
+      x-operation-id-source: derived
+    get:
+      responses:
+        '200':
+          description: crawl run schedule
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/Schedule'
+      parameters:
+      - required: true
+        description: the id of the extractor with a schedule
+        in: path
+        name: extractorId
+        schema:
+          type: string
+      security:
+      - api_key: []
+      tags:
+      - schedule.import.io
+      summary: Get the schedule of a particular extractor
+      operationId: getExtractorByExtractorId
+      x-operation-id-source: derived
+components:
+  schemas:
+    ScheduleRequest:
+      type: object
+      properties:
+        startTimestamp:
+          required: false
+          type: integer
+          example: 1485448509727
+          format: int64
+        interval:
+          required: true
+          type: string
+          example: 15 * * * *
+        extractorId:
+          required: true
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+    APIError:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A message containing a brief description of the error
+        code:
+          type: integer
+          description: Internal error code
+          format: int
+        error:
+          type: string
+          description: (deprecated) A message containing a brief description of the error
+    Schedule:
+      type: object
+      properties:
+        nextRunAt:
+          required: false
+          type: integer
+          format: int64
+        ownerId:
+          required: false
+          type: string
+        startTimestamp:
+          type: integer
+          format: int64
+        interval:
+          type: string
+        extractorId:
+          type: string
+        intervalData:
+          type: object
+          properties:
+            type:
+              type: string
+            minutes:
+              type: string
+            time:
+              type: string
+  securitySchemes:
+    api_key:
+      name": _apikey
+      in": query
+      type": apiKey

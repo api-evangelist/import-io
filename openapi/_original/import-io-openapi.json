@@ -1,0 +1,511 @@
+{
+    "info": {
+        "version": "1.0", 
+        "description": "", 
+        "title": ""
+    }, 
+    "paths": {
+        "/extractor": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "crawl run schedule", 
+                        "schema": {
+                            "$ref": "#/definitions/Schedule"
+                        }
+                    }, 
+                    "404": {
+                        "description": "Unable to find supplied extractor ID.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }, 
+                    "403": {
+                        "description": "User is not allowed to create schedule for this extractor.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }, 
+                    "401": {
+                        "description": "User doesn't own this extractor, or doesn't have a valid session.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }, 
+                    "400": {
+                        "description": "Validation errors on the request input.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "required": true, 
+                        "in": "body", 
+                        "description": "Request body with the schema defined on the left. Interval is a cron string.", 
+                        "name": "Schedule Request Body", 
+                        "schema": {
+                            "$ref": "#/definitions/ScheduleRequest"
+                        }
+                    }
+                ], 
+                "produces": [
+                    "application/json;charset=UTF-8"
+                ], 
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ], 
+                "tags": [
+                    "schedule.import.io"
+                ], 
+                "consumes": [
+                    "application/json"
+                ], 
+                "summary": "Schedule and extractor to run at a specific time"
+            }, 
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "array of crawl run schedules", 
+                        "schema": {
+                            "$ref": "#/definitions/Schedule"
+                        }
+                    }, 
+                    "404": {
+                        "description": "Unable to find supplied extractor ID.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }, 
+                    "401": {
+                        "description": "User doesn't have a valid session.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }
+                }, 
+                "tags": [
+                    "schedule.import.io"
+                ], 
+                "produces": [
+                    "application/json;charset=UTF-8"
+                ], 
+                "summary": "Get the list of schedules for all your extractors", 
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ], 
+                "consumes": [
+                    "application/json"
+                ]
+            }
+        }, 
+        "/extractor/{extractorId}/": {
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Empty object"
+                    }, 
+                    "404": {
+                        "description": "Unable to find supplied extractor ID.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }, 
+                    "403": {
+                        "description": "User is not allowed to delete this schedule.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }, 
+                    "401": {
+                        "description": "User doesn't have a valid session.", 
+                        "schema": {
+                            "$ref": "#/definitions/APIError"
+                        }
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "required": true, 
+                        "type": "string", 
+                        "description": "the id of the extractor with a schedule", 
+                        "in": "path", 
+                        "name": "extractorId"
+                    }
+                ], 
+                "produces": [
+                    "application/json;charset=UTF-8"
+                ], 
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ], 
+                "tags": [
+                    "schedule.import.io"
+                ], 
+                "consumes": [
+                    "application/json"
+                ], 
+                "summary": "Delete an existing schedule"
+            }, 
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "crawl run schedule", 
+                        "schema": {
+                            "$ref": "#/definitions/Schedule"
+                        }
+                    }
+                }, 
+                "parameters": [
+                    {
+                        "required": true, 
+                        "type": "string", 
+                        "description": "the id of the extractor with a schedule", 
+                        "in": "path", 
+                        "name": "extractorId"
+                    }
+                ], 
+                "produces": [
+                    "application/json;charset=UTF-8"
+                ], 
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ], 
+                "tags": [
+                    "schedule.import.io"
+                ], 
+                "consumes": [
+                    "application/json"
+                ], 
+                "summary": "Get the schedule of a particular extractor"
+            }
+        }
+    }, 
+    "schemes": [
+        "https"
+    ], 
+    "tags": [
+        {
+            "name": "run", 
+            "description": "APIs that exist on the run.import.io endpoint"
+        }, 
+        {
+            "name": "data", 
+            "description": "APIs that exist on the data.import.io endpoint"
+        }, 
+        {
+            "name": "extraction", 
+            "description": "APIs that exist on the extraction.import.io endpoint"
+        }, 
+        {
+            "name": "rss", 
+            "description": "APIs that exist on the rss.import.io endpoint"
+        }, 
+        {
+            "name": "store", 
+            "description": "APIs that exist on the store.import.io endpoint"
+        }, 
+        {
+            "name": "schedule", 
+            "description": "APIs that exist on the schedule.import.io endpoint"
+        }, 
+        {
+            "name": "api", 
+            "description": "APIs that exist on the api.import.io endpoint"
+        }, 
+        {
+            "name": "run.import.io"
+        }, 
+        {
+            "name": "data.import.io"
+        }, 
+        {
+            "name": "extraction.import.io"
+        }, 
+        {
+            "name": "rss.import.io"
+        }, 
+        {
+            "name": "store.import.io"
+        }, 
+        {
+            "name": "schedule.import.io"
+        }, 
+        {
+            "name": "api.import.io"
+        }
+    ], 
+    "basePath": "/", 
+    "securityDefinitions": {
+        "api_key\"": {
+            "name\"": "_apikey", 
+            "in\"": "query", 
+            "type\"": "apiKey"
+        }
+    }, 
+    "host": "schedule.import.io", 
+    "definitions": {
+        "ReportRun": {
+            "type": "object", 
+            "properties": {
+                "autoPublish": {
+                    "type": "boolean"
+                }, 
+                "latestConfigId": {
+                    "type": "string"
+                }, 
+                "guid": {
+                    "type": "string"
+                }, 
+                "type": {
+                    "type": "string"
+                }, 
+                "name": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "Inputs": {
+            "type": "object", 
+            "properties": {
+                "_url": {
+                    "required": true, 
+                    "type": "string"
+                }, 
+                "Example Input": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "Schedule": {
+            "type": "object", 
+            "properties": {
+                "nextRunAt": {
+                    "required": false, 
+                    "type": "integer", 
+                    "format": "int64"
+                }, 
+                "ownerId": {
+                    "required": false, 
+                    "type": "string"
+                }, 
+                "startTimestamp": {
+                    "type": "integer", 
+                    "format": "int64"
+                }, 
+                "interval": {
+                    "type": "string"
+                }, 
+                "extractorId": {
+                    "type": "string"
+                }, 
+                "intervalData": {
+                    "type": "object", 
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }, 
+                        "minutes": {
+                            "type": "string"
+                        }, 
+                        "time": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }, 
+        "CrawlRun": {
+            "type": "object", 
+            "properties": {
+                "guid": {
+                    "type": "string"
+                }, 
+                "failedUrlCount": {
+                    "type": "integer", 
+                    "format": "int32"
+                }, 
+                "rowCount": {
+                    "type": "integer", 
+                    "format": "int32"
+                }, 
+                "state": {
+                    "type": "string"
+                }, 
+                "stoppedAt": {
+                    "type": "integer", 
+                    "format": "int64"
+                }, 
+                "successUrlCount": {
+                    "type": "integer", 
+                    "format": "int32"
+                }, 
+                "startedAt": {
+                    "type": "integer", 
+                    "format": "int64"
+                }, 
+                "runtimeConfigId": {
+                    "type": "string"
+                }, 
+                "totalUrlCount": {
+                    "type": "integer", 
+                    "format": "int32"
+                }, 
+                "extractorId": {
+                    "type": "string"
+                }, 
+                "urlListId": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "APIError": {
+            "type": "object", 
+            "properties": {
+                "message": {
+                    "type": "string", 
+                    "description": "A message containing a brief description of the error"
+                }, 
+                "code": {
+                    "type": "integer", 
+                    "description": "Internal error code", 
+                    "format": "int"
+                }, 
+                "error": {
+                    "type": "string", 
+                    "description": "(deprecated) A message containing a brief description of the error"
+                }
+            }
+        }, 
+        "ObjectStoreSearchResult": {
+            "type": "object", 
+            "properties": {
+                "hits": {
+                    "type": "object", 
+                    "properties": {
+                        "hits": {
+                            "items": {
+                                "type": "object", 
+                                "properties": {
+                                    "_score": {
+                                        "type": "integer"
+                                    }, 
+                                    "_type": {
+                                        "type": "string"
+                                    }, 
+                                    "_id": {
+                                        "type": "string"
+                                    }, 
+                                    "fields": {
+                                        "$ref": "#/definitions/CrawlRun"
+                                    }
+                                }
+                            }, 
+                            "type": "array"
+                        }, 
+                        "total": {
+                            "type": "integer"
+                        }
+                    }
+                }, 
+                "took": {
+                    "type": "integer"
+                }, 
+                "timed_out": {
+                    "type": "boolean"
+                }
+            }
+        }, 
+        "ScheduleRequest": {
+            "type": "object", 
+            "properties": {
+                "startTimestamp": {
+                    "required": false, 
+                    "type": "integer", 
+                    "example": 1485448509727, 
+                    "format": "int64"
+                }, 
+                "interval": {
+                    "required": true, 
+                    "type": "string", 
+                    "example": "15 * * * *"
+                }, 
+                "extractorId": {
+                    "required": true, 
+                    "type": "string", 
+                    "example": "00000000-0000-0000-0000-000000000000"
+                }
+            }
+        }, 
+        "Report": {
+            "type": "object", 
+            "properties": {
+                "status": {
+                    "type": "string"
+                }, 
+                "name": {
+                    "type": "string"
+                }, 
+                "summary": {
+                    "type": "object"
+                }, 
+                "reportId": {
+                    "type": "string"
+                }, 
+                "published": {
+                    "type": "boolean"
+                }, 
+                "configId": {
+                    "type": "string"
+                }, 
+                "guid": {
+                    "type": "string"
+                }, 
+                "type": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "QueryResponse": {
+            "type": "object", 
+            "properties": {
+                "sequenceNumber": {
+                    "type": "integer", 
+                    "format": "int32"
+                }, 
+                "url": {
+                    "type": "string"
+                }, 
+                "timestamp": {
+                    "type": "integer", 
+                    "format": "int64"
+                }, 
+                "extractorData": {
+                    "type": "object"
+                }, 
+                "exceptionType": {
+                    "type": "string"
+                }, 
+                "error": {
+                    "type": "string"
+                }, 
+                "pageData": {
+                    "type": "object"
+                }, 
+                "runtimeConfigId": {
+                    "type": "string"
+                }
+            }
+        }
+    }, 
+    "swagger": "2.0"
+}

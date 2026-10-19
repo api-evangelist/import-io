@@ -1,28 +1,20 @@
 {
   "provider": "import-io",
   "sources": [
-    "_original/import-io-openapi.yml"
+    "_original/import-io-openapi.json"
   ],
   "outputs": [
-    "import-io-crawlrun-api-openapi.yml",
-    "import-io-extractor-api-openapi.yml",
-    "import-io-report-api-openapi.yml",
-    "import-io-reportrun-api-openapi.yml",
-    "import-io-user-api-openapi.yml"
+    "import-io-schedule-import-io-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "import-io-openapi.json: info.title missing"
+  ],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "import-io-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "import-io-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0; renamed 1 component key(s) illegal in 3.x (e.g. api_key\")",
+    "apis.yml register: written (+1 apis, 1 total)"
   ],
-  "skipped": [
-    "import-io-crawlrun-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "import-io-extractor-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "import-io-report-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "import-io-reportrun-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "import-io-user-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }

@@ -47,72 +47,16 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: import-io:import-io-crawlrun-api
-  name: Import.io Crawlrun API
-  description: Retrieve crawl run executions and their result files.
+- aid: import-io:import-io-schedule-import-io-api
+  name: Import.io Schedule.import.io API
+  description: The schedule.import.io API from Import.io — 2 operation(s) for schedule.import.io.
   humanURL: https://www.import.io
   baseURL: https://api.import.io
   tags:
-  - Crawlrun
+  - schedule.import.io
   properties:
   - type: OpenAPI
-    url: openapi/import-io-crawlrun-api-openapi.yml
-  - type: Documentation
-    url: https://api.docs.import.io/
-  - type: Documentation
-    url: https://docs.import.io/spec/saas/import-io-api-documentation/
-- aid: import-io:import-io-extractor-api
-  name: Import.io Extractor API
-  description: Create, configure, run, and manage web data extractors.
-  humanURL: https://www.import.io
-  baseURL: https://api.import.io
-  tags:
-  - Extractor
-  properties:
-  - type: OpenAPI
-    url: openapi/import-io-extractor-api-openapi.yml
-  - type: Documentation
-    url: https://api.docs.import.io/
-  - type: Documentation
-    url: https://docs.import.io/spec/saas/import-io-api-documentation/
-- aid: import-io:import-io-report-api
-  name: Import.io Report API
-  description: Manage reports built on top of extractors.
-  humanURL: https://www.import.io
-  baseURL: https://api.import.io
-  tags:
-  - Report
-  properties:
-  - type: OpenAPI
-    url: openapi/import-io-report-api-openapi.yml
-  - type: Documentation
-    url: https://api.docs.import.io/
-  - type: Documentation
-    url: https://docs.import.io/spec/saas/import-io-api-documentation/
-- aid: import-io:import-io-reportrun-api
-  name: Import.io ReportRun API
-  description: Retrieve report run executions and their result files.
-  humanURL: https://www.import.io
-  baseURL: https://api.import.io
-  tags:
-  - ReportRun
-  properties:
-  - type: OpenAPI
-    url: openapi/import-io-reportrun-api-openapi.yml
-  - type: Documentation
-    url: https://api.docs.import.io/
-  - type: Documentation
-    url: https://docs.import.io/spec/saas/import-io-api-documentation/
-- aid: import-io:import-io-user-api
-  name: Import.io User API
-  description: Information about the authenticated user and their subscription.
-  humanURL: https://www.import.io
-  baseURL: https://api.import.io
-  tags:
-  - User
-  properties:
-  - type: OpenAPI
-    url: openapi/import-io-user-api-openapi.yml
+    url: openapi/import-io-schedule-import-io-api-openapi.yml
   - type: Documentation
     url: https://api.docs.import.io/
   - type: Documentation
