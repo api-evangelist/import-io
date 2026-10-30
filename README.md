@@ -1,4 +1,4 @@
-# Import.io (import-io)
+# Import.io
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,134 @@
 
 Import.io is an AI-native web data extraction and integration platform trusted by enterprises to turn the web into structured, actionable intelligence. It manages extraction, transformation, delivery, and compliance end-to-end with adaptive intelligence that automatically handles website changes.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/import-io/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/import-io/refs/heads/main/apis.yml)
+**Areas:** Data Aggregation · Data Extraction · Data Integration · Pricing Intelligence · Web Scraping
 
-## Scope
+## Import.io on APIs.io
 
-- **Type:** Index
+Everything profiled for Import.io is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/import-io/](https://apis.io/providers/import-io/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Data Aggregation
-- Data Extraction
-- Data Integration
-- Pricing Intelligence
-- Web Scraping
+- [Import.io Crawlrun API](https://apis.io/apis/import-io/import-io-crawlrun-api/) — Retrieve crawl run executions and their result files.
+- [Import.io Extractor API](https://apis.io/apis/import-io/import-io-extractor-api/) — Create, configure, run, and manage web data extractors.
+- [Import.io Report API](https://apis.io/apis/import-io/import-io-report-api/) — Manage reports built on top of extractors.
+- [Import.io ReportRun API](https://apis.io/apis/import-io/import-io-reportrun-api/) — Retrieve report run executions and their result files.
+- [Import.io User API](https://apis.io/apis/import-io/import-io-user-api/) — Information about the authenticated user and their subscription.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Import.io API
+Model Context Protocol servers that expose the API to agents.
 
-The Import.io API (v2.0) provides programmatic access to create, manage, and run web data extractors, as well as retrieve extracted data. Everything available in the UI can be done via the API including scheduling extractions, managing data pipelines, and exporting data in JSON, CSV, or Excel formats. Supports authenticated extraction for data behind login screens.
+- [import-io](https://apis.io/servers/import-io/import-io/)
 
-- **Human URL:** [https://www.import.io](https://www.import.io)
-- **Base URL:** `https://api.import.io`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Data Extraction
-- Data Integration
-- No-Code
-- Web Scraping
+- [Import Io Agentic Access](https://apis.io/agentic-access/import-io/import-io-agentic-access/)
 
-#### Properties
+#### Collections (6)
 
-- [Documentation](https://api.docs.import.io/)
-- [Documentation](https://docs.import.io/spec/saas/import-io-api-documentation/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/import-io/main/openapi/import-io-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/import-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/import-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Import.io API](https://apis.io/collections/import-io/open-import-io/)
+- [Import.io Crawlrun API](https://apis.io/collections/import-io/open-import-io-crawlrun-api/)
+- [Import.io Crawlrun Extractor API](https://apis.io/collections/import-io/open-import-io-extractor-api/)
+- [Import.io Crawlrun Report API](https://apis.io/collections/import-io/open-import-io-report-api/)
+- [Import.io Crawlrun ReportRun API](https://apis.io/collections/import-io/open-import-io-reportrun-api/)
+- [Import.io Crawlrun User API](https://apis.io/collections/import-io/open-import-io-user-api/)
 
-- [GitHub Organization](https://github.com/import-io)
-- [LinkedIn](https://www.linkedin.com/company/import-io)
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Import Io Authentication](https://apis.io/security/import-io/import-io-authentication/)
+- [Import Io Domain Security](https://apis.io/security/import-io/import-io-domain-security/)
+- [Import Io Vulnerability Disclosure](https://apis.io/security/import-io/import-io-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Import Io Plans Pricing](https://apis.io/plans/import-io/import-io-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Import Io Rate Limits](https://apis.io/rate-limits/import-io/import-io-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Import Io Finops](https://apis.io/finops/import-io/import-io-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.import.io)
 - [Documentation](https://docs.import.io)
-- [Products](https://www.import.io/products)
 - [Pricing](https://www.import.io/pricing)
-- [Sign Up](https://www.import.io/live-beta)
-- [Login](https://app.import.io)
 - [Blog](https://www.import.io/blog)
-- [Data  Extraction](https://www.import.io/data-extraction)
-- [Web  Scraping as a  Service](https://www.import.io/web-scraping-as-a-service)
-- [L L Ms Txt](https://api.docs.import.io/llms.txt)
+- [GitHub](https://github.com/import-io)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.7** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 45.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 25.0 |
+
+**Agent readiness 49.6** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/import-io/](https://apis.io/providers/import-io/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Import.io: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/import-io/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
